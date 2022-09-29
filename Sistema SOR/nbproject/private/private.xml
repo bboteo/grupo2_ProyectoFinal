@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/conector/conectorCompleto.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/modelo/consultaRegOrden.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/vistas/VistaDetalleCompra.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/modelo/ClienteDAO.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/modelo/OrdenVO.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/modelo/ClienteVO.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/modelo/Extras.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/modelo/RestauranteDAO.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/vistas/vistaLogin.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/vistas/vistaRegisMenu.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/modelo/RegOrdenVO.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/modelo/RegOrdenDAO.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/modelo/ConsultaProducto.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/modelo/ProductoVO.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/modelo/DetalleOrdenDAO.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/modelo/ConsultaDetalleOrden.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/modelo/RegUsuarioDAO.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/modelo/DetalleOrdenVO.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/vistas/vistaTomaPedido.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/vistas/VistaFactura.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/modelo/ConsultaCliente.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/modelo/ConsultaRestaurante.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/vistas/vistaAdmin.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/vistas/vistaRegistUsuario.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/conexion/conexion.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/modelo/RestauranteVO.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/vistas/vistaMesas.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/modelo/UsuarioVO.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/modelo/consultaOrden.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/modelo/ConsultaUsuario.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/modelo/ProductoDAO.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/vistas/vistaOrden.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/modelo/OrdenDAO.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/vistas/VistaProcPreparcion.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/modelo/RegUsuarioVO.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/modelo/ConsultaRegUsuario.java</file>
+            <file>file:/C:/Users/Estuardo%20Salay/Documents/NetBeansProjects/Sistema%20SOR/src/modelo/UsuarioDAO.java</file>
+        </group>
+    </open-files>
+</project-private>
