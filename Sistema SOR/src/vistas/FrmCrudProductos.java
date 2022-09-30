@@ -7,14 +7,14 @@ package vistas;
 
 /**
  *
- * @author Estuardo Salay
+ * @author Toshiba
  */
-public class vistaTomaPedido extends javax.swing.JFrame {
+public class FrmCrudProductos extends javax.swing.JFrame {
 
     /**
-     * Creates new form vistaTomaPedido
+     * Creates new form FrmCrudProductos
      */
-    public vistaTomaPedido() {
+    public FrmCrudProductos() {
         initComponents();
     }
 
@@ -60,20 +60,20 @@ public class vistaTomaPedido extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(vistaTomaPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmCrudProductos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(vistaTomaPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmCrudProductos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(vistaTomaPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmCrudProductos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(vistaTomaPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmCrudProductos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new vistaTomaPedido().setVisible(true);
+                new FrmCrudProductos().setVisible(true);
             }
         });
     }
