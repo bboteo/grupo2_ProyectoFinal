@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vistas;
+package Vista;
 
 /**
  *
@@ -36,6 +36,11 @@ public class vistaAdmin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnVistaAdminIngresarU.setText("Ingresar Usuarios");
+        btnVistaAdminIngresarU.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVistaAdminIngresarUActionPerformed(evt);
+            }
+        });
 
         btnVistaAdminIngresarM.setText("Ingresar Menu");
 
@@ -81,6 +86,10 @@ public class vistaAdmin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnVistaAdminIngresarUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVistaAdminIngresarUActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVistaAdminIngresarUActionPerformed
 
     /**
      * @param args the command line arguments
