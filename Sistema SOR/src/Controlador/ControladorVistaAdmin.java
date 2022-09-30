@@ -4,10 +4,25 @@
  */
 package Controlador;
 
+import Modelo.UsuarioDAO;
+import Modelo.UsuarioVO;
+import Vista.FrmVistaAdmin;
+
 /**
  *
  * @author bboteo
  */
 public class ControladorVistaAdmin {
+    
+    FrmVistaAdmin vAd = new FrmVistaAdmin();
+    UsuarioDAO udao = new UsuarioDAO();
+    UsuarioVO uvo = new UsuarioVO();
+
+    public ControladorVistaAdmin(FrmVistaAdmin vAd, UsuarioDAO udao, UsuarioVO uvo) {
+        this.vAd = vAd;
+        this.udao = udao;
+        this.uvo = uvo;
+    }
+    
     
 }
