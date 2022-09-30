@@ -7,6 +7,7 @@ package conexion;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 /**
@@ -45,5 +46,32 @@ public class Conexion {
         } catch (Exception e) {
             System.err.println("Error[MDes]: " + e.getMessage());
         }
+    }
+    
+    public int consultasMultiples(String query){
+      int resultado;
+        try {
+            this.conectar();
+            this.statement = this.connection.createStatement();
+            resultado = this.statement.executeUpdate(query);
+        } catch (Exception e) {
+            System.err.println("Error[MCM]: " + e.getMessage());
+            return 0;
+        }
+        return resultado;
+    }
+    
+    //Metodo para realizar consultas SELECT
+    public ResultSet consultaDatos(String consulta){
+        try {
+            this.conectar();
+            ResultSet resultado = null;
+            this.statement = this.connection.createStatement();
+            resultado = this.statement.executeQuery(consulta);
+            return resultado;
+        } catch (Exception e) {
+            System.err.println("Error[MCD]: " + e.getMessage());
+        }
+        return null;
     }
 }
