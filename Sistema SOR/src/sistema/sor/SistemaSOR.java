@@ -22,6 +22,7 @@ public class SistemaSOR {
         //Controlador
         ControladorVistaAdmin cVa = new ControladorVistaAdmin(fVa,udao,uvo);
         
+        //Pruebas Bau
         fVa.setVisible(true);
         fVa.setLocationRelativeTo(null);
         fVa.setResizable(false);

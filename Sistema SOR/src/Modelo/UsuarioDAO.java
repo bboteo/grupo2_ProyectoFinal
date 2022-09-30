@@ -19,11 +19,14 @@ public class UsuarioDAO implements TablaUsuario{
         try {
             c.conectar();
             String query =" ";
-            
+            c.consultasMultiples(query);
         } catch (Exception e) {
+            System.err.println("Error al insertar Usuario: "+e);
+            c.desconectar();
+            return false;
         }
         
-        return false;
+        return true;
     }
 
     @Override
