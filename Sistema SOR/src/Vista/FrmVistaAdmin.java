@@ -32,30 +32,69 @@ public class FrmVistaAdmin extends javax.swing.JFrame {
         btnVistaAdminVerMesas = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnVistaAdminHistorial = new javax.swing.JButton();
+        btnVistaAdminSalir = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CRUD ADMIN");
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnVistaAdminIngresarU.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVistaAdminIngresarU.setText("Ingresar Usuarios");
         btnVistaAdminIngresarU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVistaAdminIngresarUActionPerformed(evt);
             }
         });
-        getContentPane().add(btnVistaAdminIngresarU, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 30, -1, -1));
 
+        btnVistaAdminIngresarM.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVistaAdminIngresarM.setText("Ingresar Menu");
-        getContentPane().add(btnVistaAdminIngresarM, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 64, 120, -1));
 
+        btnVistaAdminVerMesas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVistaAdminVerMesas.setText("Ver Mesas");
-        getContentPane().add(btnVistaAdminVerMesas, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 104, 120, -1));
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("Historial");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 144, -1, -1));
 
         btnVistaAdminHistorial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Historial1.png"))); // NOI18N
-        getContentPane().add(btnVistaAdminHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 166, 44, -1));
+
+        btnVistaAdminSalir.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnVistaAdminSalir.setText("Salir");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnVistaAdminSalir, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnVistaAdminIngresarU, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                        .addComponent(btnVistaAdminIngresarM, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnVistaAdminVerMesas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(btnVistaAdminHistorial, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE))
+                .addGap(34, 34, 34))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnVistaAdminIngresarU)
+                    .addComponent(jLabel1))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnVistaAdminHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnVistaAdminIngresarM)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnVistaAdminVerMesas)))
+                .addGap(18, 18, 18)
+                .addComponent(btnVistaAdminSalir)
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -104,6 +143,7 @@ public class FrmVistaAdmin extends javax.swing.JFrame {
     public javax.swing.JButton btnVistaAdminHistorial;
     public javax.swing.JButton btnVistaAdminIngresarM;
     public javax.swing.JButton btnVistaAdminIngresarU;
+    public javax.swing.JButton btnVistaAdminSalir;
     public javax.swing.JButton btnVistaAdminVerMesas;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

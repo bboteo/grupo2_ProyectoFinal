@@ -5,9 +5,11 @@
  */
 package sistema.sor;
 
+import Controlador.ControladorUsuriosAdmin;
 import Controlador.ControladorVistaAdmin;
 import Modelo.UsuarioDAO;
 import Modelo.UsuarioVO;
+import Vista.FrmUsuariosAdmin;
 import Vista.FrmVistaAdmin;
 import conexion.Conexion;
 
@@ -16,12 +18,13 @@ public class SistemaSOR {
     public static void main(String[] args) {
         //Vista
         FrmVistaAdmin fVa = new FrmVistaAdmin();
+        FrmUsuariosAdmin fUa = new FrmUsuariosAdmin();
         //Modelo
         UsuarioDAO udao = new UsuarioDAO();
         UsuarioVO uvo = new UsuarioVO();
         //Controlador
-        ControladorVistaAdmin cVa = new ControladorVistaAdmin(fVa,udao,uvo);
-        
+        ControladorVistaAdmin cVa = new ControladorVistaAdmin(fVa,fUa);
+        ControladorUsuriosAdmin cUa = new ControladorUsuriosAdmin();
         //Pruebas Bau
         fVa.setVisible(true);
         fVa.setLocationRelativeTo(null);

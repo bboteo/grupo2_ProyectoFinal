@@ -4,24 +4,56 @@
  */
 package Controlador;
 
-import Modelo.UsuarioDAO;
-import Modelo.UsuarioVO;
+import Vista.FrmUsuariosAdmin;
 import Vista.FrmVistaAdmin;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
  * @author bboteo
  */
-public class ControladorVistaAdmin {
+public class ControladorVistaAdmin implements ActionListener{
     
     FrmVistaAdmin vAd = new FrmVistaAdmin();
-    UsuarioDAO udao = new UsuarioDAO();
-    UsuarioVO uvo = new UsuarioVO();
+    FrmUsuariosAdmin vUd = new FrmUsuariosAdmin();
 
-    public ControladorVistaAdmin(FrmVistaAdmin vAd, UsuarioDAO udao, UsuarioVO uvo) {
+    public ControladorVistaAdmin(FrmVistaAdmin vAd,FrmUsuariosAdmin vUd) {
         this.vAd = vAd;
-        this.udao = udao;
-        this.uvo = uvo;
+        this.vUd = vUd;
+        
+        this.vAd.btnVistaAdminIngresarU.addActionListener(this);
+        this.vAd.btnVistaAdminIngresarM.addActionListener(this);
+        this.vAd.btnVistaAdminVerMesas.addActionListener(this);
+        this.vAd.btnVistaAdminSalir.addActionListener(this);
+        this.vAd.btnVistaAdminHistorial.addActionListener(this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        //Para ingresar usuarios
+        if(e.getSource()==vAd.btnVistaAdminIngresarU){
+            vAd.dispose();
+            vUd.setVisible(true);
+            vUd.setLocationRelativeTo(vAd);
+            vUd.setResizable(false);
+        }
+        //Para ingresar productos
+        if(e.getSource()==vAd.btnVistaAdminIngresarM){
+            
+        }
+        //Para ver el historial
+        if(e.getSource()==vAd.btnVistaAdminHistorial){
+            
+        }
+        //Para ver mesas
+        if(e.getSource()==vAd.btnVistaAdminVerMesas){
+            
+        }
+        //Para salir y volver al login
+        if(e.getSource()==vAd.btnVistaAdminSalir){
+            vAd.dispose();
+        }
     }
     
     
