@@ -9,12 +9,12 @@ package Vista;
  *
  * @author Estuardo Salay
  */
-public class vistaAdmin extends javax.swing.JFrame {
+public class FrmVistaAdmin extends javax.swing.JFrame {
 
     /**
      * Creates new form vistaAdmin
      */
-    public vistaAdmin() {
+    public FrmVistaAdmin() {
         initComponents();
     }
 
@@ -32,9 +32,12 @@ public class vistaAdmin extends javax.swing.JFrame {
         btnVistaAdminVerMesas = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnVistaAdminHistorial = new javax.swing.JButton();
+        btnVistaAdminSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("CRUD ADMIN");
 
+        btnVistaAdminIngresarU.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVistaAdminIngresarU.setText("Ingresar Usuarios");
         btnVistaAdminIngresarU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -42,46 +45,55 @@ public class vistaAdmin extends javax.swing.JFrame {
             }
         });
 
+        btnVistaAdminIngresarM.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVistaAdminIngresarM.setText("Ingresar Menu");
 
+        btnVistaAdminVerMesas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVistaAdminVerMesas.setText("Ver Mesas");
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("Historial");
 
         btnVistaAdminHistorial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Historial1.png"))); // NOI18N
+
+        btnVistaAdminSalir.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnVistaAdminSalir.setText("Salir");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 25, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnVistaAdminVerMesas, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnVistaAdminIngresarM, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnVistaAdminIngresarU))
-                .addGap(21, 21, 21))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnVistaAdminHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(59, 59, 59))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnVistaAdminSalir, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnVistaAdminIngresarU, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                        .addComponent(btnVistaAdminIngresarM, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnVistaAdminVerMesas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(btnVistaAdminHistorial, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE))
+                .addGap(34, 34, 34))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(btnVistaAdminIngresarU)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnVistaAdminIngresarM)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnVistaAdminIngresarU)
+                    .addComponent(jLabel1))
                 .addGap(18, 18, 18)
-                .addComponent(btnVistaAdminVerMesas)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnVistaAdminHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnVistaAdminIngresarM)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnVistaAdminVerMesas)))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnVistaAdminHistorial)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addComponent(btnVistaAdminSalir)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         pack();
@@ -108,20 +120,21 @@ public class vistaAdmin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(vistaAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmVistaAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(vistaAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmVistaAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(vistaAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmVistaAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(vistaAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmVistaAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new vistaAdmin().setVisible(true);
+                new FrmVistaAdmin().setVisible(true);
             }
         });
     }
@@ -130,6 +143,7 @@ public class vistaAdmin extends javax.swing.JFrame {
     public javax.swing.JButton btnVistaAdminHistorial;
     public javax.swing.JButton btnVistaAdminIngresarM;
     public javax.swing.JButton btnVistaAdminIngresarU;
+    public javax.swing.JButton btnVistaAdminSalir;
     public javax.swing.JButton btnVistaAdminVerMesas;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
