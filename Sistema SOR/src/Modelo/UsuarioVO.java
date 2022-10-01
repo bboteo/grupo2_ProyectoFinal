@@ -15,6 +15,7 @@ public class UsuarioVO {
     private String contrasena;
     private String tipo_usuario;
     private int cod_img_usuario;
+    private String username;
 
     public UsuarioVO() {
     }
@@ -67,5 +68,13 @@ public class UsuarioVO {
         this.cod_img_usuario = cod_img_usuario;
     }
     
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     
 }

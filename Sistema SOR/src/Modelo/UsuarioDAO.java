@@ -83,7 +83,23 @@ public class UsuarioDAO implements TablaUsuario{
 
     @Override
     public boolean actualizarU(UsuarioVO u) {
-        return false;
+        Conexion c = new Conexion();
+        try {
+            c.conectar();
+            String query ="UPDATE usuario AS u SET "
+                    + "u.nombre = '"+u.getNombre()+"',"
+                    + "u.apellido = '"+u.getApellido()+"',"
+                    + "u.contrasena = '"+u.getContrasena()+"',"
+                    + "u.tipo_usuario = '"+u.getTipo_usuario()+"' "
+                    + "WHERE u.id_usuario = "+u.getId_usuario();
+            c.consultasMultiples(query);
+        } catch (Exception e) {
+            System.err.println("Error Actualizar usuario"+e);
+            c.desconectar();
+            return false;
+        }
+        c.desconectar();
+        return true;
     }
     
 }

@@ -46,25 +46,36 @@ public class ControladorUsuriosAdmin implements ActionListener, WindowListener, 
         uvo.setId_usuario(idTable);
         
         //Para llenar los datos
-        vUa.txtUsuarioAdminNombre.setText(vUa.tblUsuariosAdminMostrar.getValueAt(r, 1).toString());
-        vUa.txtUsuarioAdminApellido.setText(vUa.tblUsuariosAdminMostrar.getValueAt(r, 2).toString());
-        vUa.txtUsuarioAdminContrasena.setText(vUa.tblUsuariosAdminMostrar.getValueAt(r, 3).toString());
+        uvo.setNombre(vUa.tblUsuariosAdminMostrar.getValueAt(r, 1).toString());
+        uvo.setApellido(vUa.tblUsuariosAdminMostrar.getValueAt(r, 2).toString());
+        uvo.setContrasena(vUa.tblUsuariosAdminMostrar.getValueAt(r, 3).toString());
+        
+        
+        
+        vUa.txtUsuarioAdminNombre.setText(uvo.getNombre());
+        vUa.txtUsuarioAdminApellido.setText(uvo.getApellido());
+        vUa.txtUsuarioAdminContrasena.setText(uvo.getContrasena());
         //Traer info del jcomboBox
         switch(vUa.tblUsuariosAdminMostrar.getValueAt(r, 4).toString()){
             case "admin":
                 vUa.jcbUsuarioAdminTipo.setSelectedIndex(0);
+                uvo.setTipo_usuario("admin");
                 break;
             case "mesero":
                 vUa.jcbUsuarioAdminTipo.setSelectedIndex(1);
+                uvo.setTipo_usuario("mesero");
                 break;
             case "host":
                 vUa.jcbUsuarioAdminTipo.setSelectedIndex(2);
+                uvo.setTipo_usuario("host");
                 break;
             case "cocina":
                 vUa.jcbUsuarioAdminTipo.setSelectedIndex(3);
+                uvo.setTipo_usuario("cocina");
                 break;
             case "bar":
                 vUa.jcbUsuarioAdminTipo.setSelectedIndex(4);
+                uvo.setTipo_usuario("bar");
                 break;
             default:
                 break;
@@ -72,6 +83,10 @@ public class ControladorUsuriosAdmin implements ActionListener, WindowListener, 
     }
     
     private void inicializarF(){
+        //Inicializar botones
+        vUa.btnUsuarioAdminCreate.setEnabled(true);
+        vUa.btnUsuarioAdminRead.setEnabled(true);
+
         //Limpia texto
         vUa.txtUsuarioAdminNombre.setText("");
         vUa.txtUsuarioAdminApellido.setText("");
@@ -81,6 +96,7 @@ public class ControladorUsuriosAdmin implements ActionListener, WindowListener, 
         vUa.txtUsuarioAdminNombre.setEditable(true);
         vUa.txtUsuarioAdminApellido.setEditable(true);
         vUa.txtUsuarioAdminContrasena.setEditable(true);
+        vUa.jcbUsuarioAdminTipo.setEnabled(true);
         vUa.jcbUsuarioAdminTipo.setEditable(true);
         //Oculta tabla
         vUa.jpUsuarioAdminListar.setVisible(false);
@@ -156,6 +172,10 @@ public class ControladorUsuriosAdmin implements ActionListener, WindowListener, 
         return udao.eliminarU(uvo);
     }
     
+    private boolean modificarU(){
+        return udao.actualizarU(uvo);
+    }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==vUa.btnUsuarioAdminCreate){
@@ -181,6 +201,16 @@ public class ControladorUsuriosAdmin implements ActionListener, WindowListener, 
             mostrarU();
         }
         if(e.getSource()==vUa.btnUsuarioAdminUpdate){
+            if(modificarU()){
+                vUa.jopUsuarioAdmin.showMessageDialog(vUa,"Usuario modificado correctamente");
+                //inicializarF();
+                mostrarU();
+            }
+            else{
+                vUa.jopUsuarioAdmin.showMessageDialog(vUa,"Error al modificar usuario");
+                //inicializarF();
+                mostrarU();
+            }
             
         }
         if(e.getSource()==vUa.btnUsuarioAdminDelete){
@@ -237,6 +267,14 @@ public class ControladorUsuriosAdmin implements ActionListener, WindowListener, 
     @Override
     public void mouseClicked(MouseEvent e) {
         if(e.getClickCount()==2){
+            vUa.txtUsuarioAdminNombre.setEditable(true);
+            vUa.txtUsuarioAdminApellido.setEditable(true);
+            vUa.txtUsuarioAdminContrasena.setEditable(true);
+            vUa.jcbUsuarioAdminTipo.setEditable(true);
+            vUa.jcbUsuarioAdminTipo.setEnabled(true);
+            
+            vUa.btnUsuarioAdminCreate.setEnabled(false);
+            vUa.btnUsuarioAdminRead.setEnabled(false);
             seleccionarId();
         }
     }
