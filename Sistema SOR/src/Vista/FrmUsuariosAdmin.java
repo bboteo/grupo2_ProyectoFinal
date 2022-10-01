@@ -4,6 +4,8 @@
  */
 package Vista;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author bboteo
@@ -26,23 +28,26 @@ public class FrmUsuariosAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jopUsuarioAdmin = new javax.swing.JOptionPane();
         txtUsuarioAdminNombre = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        btnUsuarioAdminVar = new javax.swing.JButton();
-        btnUsuarioAdminCancelar = new javax.swing.JButton();
         jcbUsuarioAdminTipo = new javax.swing.JComboBox<>();
         txtUsuarioAdminApellido = new javax.swing.JTextField();
         jpUsuarioAdminListar = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        DefaultTableModel dtm = new DefaultTableModel();
+        tblUsuariosAdminMostrar = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
         txtUsuarioAdminContrasena = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        btnUsuarioAdminCreate = new javax.swing.JButton();
+        btnUsuarioAdminRead = new javax.swing.JButton();
+        btnUsuarioAdminUpdate = new javax.swing.JButton();
+        btnUsuarioAdminDelete = new javax.swing.JButton();
+        btnUsuarioAdminCancelar = new javax.swing.JButton();
+        btnUsuariosAdminLimpiar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("CRUD USUARIO ADMIN");
@@ -58,18 +63,13 @@ public class FrmUsuariosAdmin extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Tipo Usuario");
 
-        btnUsuarioAdminVar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnUsuarioAdminVar.setText("Insertar/Ver/Borrar");
-
-        btnUsuarioAdminCancelar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnUsuarioAdminCancelar.setText("Cancelar");
-
         jcbUsuarioAdminTipo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jcbUsuarioAdminTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Mesero", "Host", "Cocina", "Bar" }));
+        jcbUsuarioAdminTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "admin", "mesero", "host", "cocina", "bar", "" }));
 
         txtUsuarioAdminApellido.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblUsuariosAdminMostrar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        tblUsuariosAdminMostrar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -80,7 +80,7 @@ public class FrmUsuariosAdmin extends javax.swing.JFrame {
                 "ID", "Nombre", "Apellido", "Tipo"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblUsuariosAdminMostrar);
 
         javax.swing.GroupLayout jpUsuarioAdminListarLayout = new javax.swing.GroupLayout(jpUsuarioAdminListar);
         jpUsuarioAdminListar.setLayout(jpUsuarioAdminListarLayout);
@@ -88,14 +88,14 @@ public class FrmUsuariosAdmin extends javax.swing.JFrame {
             jpUsuarioAdminListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpUsuarioAdminListarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
-                .addGap(15, 15, 15))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 453, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jpUsuarioAdminListarLayout.setVerticalGroup(
             jpUsuarioAdminListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpUsuarioAdminListarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -104,11 +104,23 @@ public class FrmUsuariosAdmin extends javax.swing.JFrame {
 
         txtUsuarioAdminContrasena.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jButton1.setText("jButton1");
+        btnUsuarioAdminCreate.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnUsuarioAdminCreate.setText("CREATE");
 
-        jCheckBox1.setText("jCheckBox1");
+        btnUsuarioAdminRead.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnUsuarioAdminRead.setText("READ");
 
-        jRadioButton1.setText("jRadioButton1");
+        btnUsuarioAdminUpdate.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnUsuarioAdminUpdate.setText("UPDATE");
+
+        btnUsuarioAdminDelete.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnUsuarioAdminDelete.setText("DELETE");
+
+        btnUsuarioAdminCancelar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnUsuarioAdminCancelar.setText("Cancelar");
+
+        btnUsuariosAdminLimpiar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnUsuariosAdminLimpiar.setText("Limpiar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -118,49 +130,42 @@ public class FrmUsuariosAdmin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(jLabel1)
-                        .addGap(54, 54, 54)
-                        .addComponent(txtUsuarioAdminNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel2)
-                        .addGap(54, 54, 54)
-                        .addComponent(txtUsuarioAdminApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel4)
-                        .addGap(31, 31, 31)
-                        .addComponent(txtUsuarioAdminContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(jpUsuarioAdminListar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel1)
+                                .addGap(54, 54, 54)
+                                .addComponent(txtUsuarioAdminNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(230, 230, 230)
-                                .addComponent(btnUsuarioAdminCancelar)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel2)
+                                .addGap(54, 54, 54)
+                                .addComponent(txtUsuarioAdminApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(79, 79, 79)
-                                .addComponent(btnUsuarioAdminVar))
+                                .addComponent(jLabel4)
+                                .addGap(31, 31, 31)
+                                .addComponent(txtUsuarioAdminContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(89, 89, 89)
-                                .addComponent(jButton1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(104, 104, 104)
-                                .addComponent(jRadioButton1)))))
-                .addContainerGap(141, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel3)
-                .addGap(20, 20, 20)
-                .addComponent(jcbUsuarioAdminTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCheckBox1)
-                .addGap(154, 154, 154))
+                                .addComponent(jLabel3)
+                                .addGap(20, 20, 20)
+                                .addComponent(jcbUsuarioAdminTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(32, 32, 32)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnUsuarioAdminCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnUsuarioAdminRead, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnUsuarioAdminUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
+                            .addComponent(btnUsuarioAdminDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(16, 16, 16)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(btnUsuariosAdminLimpiar)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(btnUsuarioAdminCancelar))
+                                .addComponent(jpUsuarioAdminListar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,41 +173,36 @@ public class FrmUsuariosAdmin extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addComponent(txtUsuarioAdminNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtUsuarioAdminNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnUsuarioAdminCreate)))
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(txtUsuarioAdminApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtUsuarioAdminApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnUsuarioAdminRead)))
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
-                    .addComponent(txtUsuarioAdminContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtUsuarioAdminContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnUsuarioAdminUpdate)))
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jcbUsuarioAdminTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jCheckBox1)))
+                        .addComponent(btnUsuarioAdminDelete)))
                 .addGap(9, 9, 9)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(btnUsuarioAdminCancelar))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addComponent(btnUsuarioAdminVar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(15, 15, 15)
-                        .addComponent(jpUsuarioAdminListar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(20, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addGap(53, 53, 53)
-                        .addComponent(jRadioButton1)
-                        .addGap(129, 129, 129))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jpUsuarioAdminListar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnUsuarioAdminCancelar)
+                    .addComponent(btnUsuariosAdminLimpiar))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();
@@ -245,19 +245,21 @@ public class FrmUsuariosAdmin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnUsuarioAdminCancelar;
-    public javax.swing.JButton btnUsuarioAdminVar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
+    public javax.swing.JButton btnUsuarioAdminCreate;
+    public javax.swing.JButton btnUsuarioAdminDelete;
+    public javax.swing.JButton btnUsuarioAdminRead;
+    public javax.swing.JButton btnUsuarioAdminUpdate;
+    public javax.swing.JButton btnUsuariosAdminLimpiar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
     public javax.swing.JComboBox<String> jcbUsuarioAdminTipo;
+    public javax.swing.JOptionPane jopUsuarioAdmin;
     public javax.swing.JPanel jpUsuarioAdminListar;
+    public javax.swing.JTable tblUsuariosAdminMostrar;
     public javax.swing.JTextField txtUsuarioAdminApellido;
     public javax.swing.JTextField txtUsuarioAdminContrasena;
     public javax.swing.JTextField txtUsuarioAdminNombre;

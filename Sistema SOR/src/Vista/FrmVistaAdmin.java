@@ -38,7 +38,7 @@ public class FrmVistaAdmin extends javax.swing.JFrame {
         setTitle("CRUD ADMIN");
 
         btnVistaAdminIngresarU.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnVistaAdminIngresarU.setText("Ingresar Usuarios");
+        btnVistaAdminIngresarU.setText("Gestionar Usuarios");
         btnVistaAdminIngresarU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVistaAdminIngresarUActionPerformed(evt);
@@ -46,7 +46,7 @@ public class FrmVistaAdmin extends javax.swing.JFrame {
         });
 
         btnVistaAdminIngresarM.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnVistaAdminIngresarM.setText("Ingresar Menu");
+        btnVistaAdminIngresarM.setText("Gestionar Menu");
 
         btnVistaAdminVerMesas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVistaAdminVerMesas.setText("Ver Mesas");
@@ -67,10 +67,9 @@ public class FrmVistaAdmin extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnVistaAdminSalir, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btnVistaAdminIngresarU, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
-                        .addComponent(btnVistaAdminIngresarM, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnVistaAdminVerMesas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(btnVistaAdminIngresarU, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                    .addComponent(btnVistaAdminIngresarM, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnVistaAdminVerMesas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
