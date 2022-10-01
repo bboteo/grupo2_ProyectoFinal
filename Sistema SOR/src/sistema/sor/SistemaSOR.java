@@ -24,7 +24,7 @@ public class SistemaSOR {
         UsuarioVO uvo = new UsuarioVO();
         //Controlador
         ControladorVistaAdmin cVa = new ControladorVistaAdmin(fVa,fUa);
-        ControladorUsuriosAdmin cUa = new ControladorUsuriosAdmin();
+        ControladorUsuriosAdmin cUa = new ControladorUsuriosAdmin(fUa,udao,uvo);
         //Pruebas Bau
         fVa.setVisible(true);
         fVa.setLocationRelativeTo(null);
