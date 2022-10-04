@@ -20,12 +20,13 @@ public class UsuarioDAO implements TablaUsuario{
         try {
             c.conectar();
             String query ="INSERT INTO dbogrupo2.usuario "
-                    + "(usuario.nombre, usuario.apellido,usuario.contrasena ,usuario.tipo_usuario) "
+                    + "(usuario.nombre, usuario.apellido,usuario.contrasena ,usuario.tipo_usuario,usuario.usr) "
                     + "VALUES ('"
                     + u.getNombre()+"','"
                     + u.getApellido()+"','"
                     + u.getContrasena()+"','"
-                    + u.getTipo_usuario()+"')";
+                    + u.getTipo_usuario()+"','"
+                    + u.getUsername()+"')";
             c.consultasMultiples(query);
         } catch (Exception e) {
             System.err.println("Error al insertar Usuario: "+e);
@@ -43,17 +44,18 @@ public class UsuarioDAO implements TablaUsuario{
         Conexion c = new Conexion();
         try {
             c.conectar();
-            String query ="SELECT u.id_usuario, u.nombre, u.apellido, u.contrasena, u.tipo_usuario, u.cod_img_usuario "
+            String query ="SELECT u.id_usuario, u.usr ,u.nombre, u.apellido, u.contrasena, u.tipo_usuario, u.cod_img_usuario "
                     + "FROM usuario AS u;";
             result = c.consultaDatos(query);
             while(result.next()){
                 UsuarioVO u = new UsuarioVO();
                 u.setId_usuario(result.getInt(1));
-                u.setNombre(result.getString(2));
-                u.setApellido(result.getString(3));
-                u.setContrasena(result.getString(4));
-                u.setTipo_usuario(result.getString(5));
-                u.setCod_img_usuario(result.getInt(6));
+                u.setUsername(result.getString(2));
+                u.setNombre(result.getString(3));
+                u.setApellido(result.getString(4));
+                u.setContrasena(result.getString(5));
+                u.setTipo_usuario(result.getString(6));
+                u.setCod_img_usuario(result.getInt(7));
                 info.add(u);
             }
             c.desconectar();
@@ -90,7 +92,8 @@ public class UsuarioDAO implements TablaUsuario{
                     + "u.nombre = '"+u.getNombre()+"',"
                     + "u.apellido = '"+u.getApellido()+"',"
                     + "u.contrasena = '"+u.getContrasena()+"',"
-                    + "u.tipo_usuario = '"+u.getTipo_usuario()+"' "
+                    + "u.tipo_usuario = '"+u.getTipo_usuario()+"',"
+                    + "u.usr = '"+u.getUsername()+"' "
                     + "WHERE u.id_usuario = "+u.getId_usuario();
             c.consultasMultiples(query);
         } catch (Exception e) {
