@@ -3,11 +3,30 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/bboteo/Documents/gitHubRepositorio/grupo2_ProyectoFinal/Sistema%20SOR/src/conexion/Conexion.java</file>
+=======
+<<<<<<< HEAD
+            <file>file:/C:/Proyectos%20Java/Proyecto%20final/grupo2_ProyectoFinal/Sistema%20SOR/src/Modelo/LoginDAO.java</file>
+            <file>file:/C:/Proyectos%20Java/Proyecto%20final/grupo2_ProyectoFinal/Sistema%20SOR/src/Vista/FrmCrudProductos.java</file>
+            <file>file:/C:/Proyectos%20Java/Proyecto%20final/grupo2_ProyectoFinal/Sistema%20SOR/src/Vista/FrmCrudUsuarios.java</file>
+            <file>file:/C:/Proyectos%20Java/Proyecto%20final/grupo2_ProyectoFinal/Sistema%20SOR/src/Controlador/ControladorLogin.java</file>
+            <file>file:/C:/Proyectos%20Java/Proyecto%20final/grupo2_ProyectoFinal/Sistema%20SOR/src/sistema/sor/SistemaSOR.java</file>
+            <file>file:/C:/Proyectos%20Java/Proyecto%20final/grupo2_ProyectoFinal/Sistema%20SOR/src/Vista/FrmLogin.java</file>
+=======
+            <file>file:/C:/Users/bboteo/Documents/gitHubRepositorio/grupo2_ProyectoFinal/Sistema%20SOR/src/Vista/FrmVistaAdmin.java</file>
+            <file>file:/C:/Users/bboteo/Documents/gitHubRepositorio/grupo2_ProyectoFinal/Sistema%20SOR/src/Vista/FrmUsuariosAdmin.java</file>
+>>>>>>> e6fe4e6b749cce9070513a23fb8103c91b80cce2
             <file>file:/C:/Users/bboteo/Documents/gitHubRepositorio/grupo2_ProyectoFinal/Sistema%20SOR/src/sistema/sor/SistemaSOR.java</file>
             <file>file:/C:/Users/bboteo/Documents/gitHubRepositorio/grupo2_ProyectoFinal/Sistema%20SOR/src/Vista/FrmLogin.java</file>
             <file>file:/C:/Users/bboteo/Documents/gitHubRepositorio/grupo2_ProyectoFinal/Sistema%20SOR/src/Controlador/ControladorUsuriosAdmin.java</file>
             <file>file:/C:/Users/bboteo/Documents/gitHubRepositorio/grupo2_ProyectoFinal/Sistema%20SOR/src/Controlador/ControladorVistaAdmin.java</file>
+<<<<<<< HEAD
+=======
+            <file>file:/C:/Users/bboteo/Documents/gitHubRepositorio/grupo2_ProyectoFinal/Sistema%20SOR/src/Modelo/TablaUsuario.java</file>
+            <file>file:/C:/Users/bboteo/Documents/gitHubRepositorio/grupo2_ProyectoFinal/Sistema%20SOR/src/Modelo/UsuarioVO.java</file>
+>>>>>>> d4263d0476bdf3b7693c36002732d53b7c009766
+>>>>>>> e6fe4e6b749cce9070513a23fb8103c91b80cce2
         </group>
     </open-files>
 </project-private>
