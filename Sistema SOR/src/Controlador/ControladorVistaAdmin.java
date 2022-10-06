@@ -4,6 +4,9 @@
  */
 package Controlador;
 
+import Modelo.OrdenDAO;
+import Modelo.OrdenVO;
+import Vista.FrmMesas;
 import Vista.FrmUsuariosAdmin;
 import Vista.FrmVistaAdmin;
 import java.awt.event.ActionEvent;
@@ -17,10 +20,16 @@ public class ControladorVistaAdmin implements ActionListener{
     
     FrmVistaAdmin vAd = new FrmVistaAdmin();
     FrmUsuariosAdmin vUd = new FrmUsuariosAdmin();
+    
+    FrmMesas vMesa = new FrmMesas();  //JM
+   // OrdenDAO ordenDAO = new OrdenDAO();
+    //OrdenVO ordenVO = new OrdenVO();
+   // ControladorOrden cOrden = new ControladorOrden(vMesa, ordenDAO, ordenVO);
 
-    public ControladorVistaAdmin(FrmVistaAdmin vAd,FrmUsuariosAdmin vUd) {
+    public ControladorVistaAdmin(FrmVistaAdmin vAd,FrmUsuariosAdmin vUd, FrmMesas vMesa) {
         this.vAd = vAd;
         this.vUd = vUd;
+        this.vMesa = vMesa;
         
         this.vAd.btnVistaAdminIngresarU.addActionListener(this);
         this.vAd.btnVistaAdminIngresarM.addActionListener(this);
@@ -49,6 +58,8 @@ public class ControladorVistaAdmin implements ActionListener{
         //Para ver mesas
         if(e.getSource()==vAd.btnVistaAdminVerMesas){
             
+            this.vMesa.setVisible(true   );  //JM
+            this.vMesa.setLocationRelativeTo(null); //JM
         }
         //Para salir y volver al login
         if(e.getSource()==vAd.btnVistaAdminSalir){
