@@ -7,6 +7,9 @@ package Controlador;
 import Modelo.LoginDAO;
 import Modelo.UsuarioVO;
 import Vista.FrmLogin;
+import Modelo.OrdenDAO;
+import Modelo.OrdenVO;
+import Vista.FrmMesas;
 import Vista.FrmUsuariosAdmin;
 import Vista.FrmVistaAdmin;
 import java.awt.event.ActionEvent;
@@ -21,16 +24,25 @@ import java.util.ArrayList;
  */
 public class ControladorVistaAdmin implements ActionListener, WindowListener{
     FrmLogin vlog = new FrmLogin();
+     FrmMesas vMesa = new FrmMesas();  //JM
     FrmVistaAdmin vAd = new FrmVistaAdmin();
     FrmUsuariosAdmin vUd = new FrmUsuariosAdmin();
     LoginDAO ldao = new LoginDAO();
 
     public ControladorVistaAdmin(FrmVistaAdmin vAd,FrmUsuariosAdmin vUd,FrmLogin vlog,
-            LoginDAO ldao) {
+            LoginDAO ldao,FrmMesas vMesa) {
         this.vAd = vAd;
         this.vUd = vUd;
         this.vlog = vlog;
         this.ldao = ldao;
+        this.vMesa = vMesa;
+   
+   // OrdenDAO ordenDAO = new OrdenDAO();
+    //OrdenVO ordenVO = new OrdenVO();
+   // ControladorOrden cOrden = new ControladorOrden(vMesa, ordenDAO, ordenVO);
+
+    
+        
         
         this.vAd.btnVistaAdminIngresarU.addActionListener(this);
         this.vAd.btnVistaAdminIngresarM.addActionListener(this);
@@ -65,6 +77,8 @@ public class ControladorVistaAdmin implements ActionListener, WindowListener{
         //Para ver mesas
         if(e.getSource()==vAd.btnVistaAdminVerMesas){
             
+            this.vMesa.setVisible(true   );  //JM
+            this.vMesa.setLocationRelativeTo(null); //JM
         }
         //Para salir y volver al login
         if(e.getSource()==vAd.btnVistaAdminSalir){

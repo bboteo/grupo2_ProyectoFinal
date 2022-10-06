@@ -6,13 +6,20 @@
 package sistema.sor;
 
 import Controlador.ControladorLogin;
+import Controlador.ControladorOrden;
+import Controlador.ControladorRegistroOrden;
 import Controlador.ControladorUsuriosAdmin;
 import Controlador.ControladorVistaAdmin;
 import Modelo.LoginDAO;
+import Modelo.OrdenDAO;
+import Modelo.OrdenVO;
+import Modelo.RegistroOrdenDAO;
+import Modelo.RegistroOrdenVO;
 import Modelo.UsuarioDAO;
 import Modelo.UsuarioVO;
 import Vista.FrmLogin;
 import Vista.FrmMesas;
+import Vista.FrmRegistroOrden;
 import Vista.FrmUsuariosAdmin;
 import Vista.FrmVistaAdmin;
 import conexion.Conexion;
@@ -24,15 +31,26 @@ public class SistemaSOR {
         FrmLogin fvlog = new FrmLogin();
         FrmVistaAdmin fVa = new FrmVistaAdmin();
         FrmUsuariosAdmin fUa = new FrmUsuariosAdmin();
-        FrmMesas fmesa = new FrmMesas();
+        FrmMesas fMesa = new FrmMesas();
+        FrmRegistroOrden fRegOrden = new FrmRegistroOrden();
+        
         //Modelo
         UsuarioDAO udao = new UsuarioDAO();
         UsuarioVO uvo = new UsuarioVO();
         LoginDAO ldao = new LoginDAO();
+        OrdenDAO odao = new OrdenDAO();
+        OrdenVO ovo = new OrdenVO();
+        RegistroOrdenDAO rodao = new RegistroOrdenDAO();
+        RegistroOrdenVO rovo = new RegistroOrdenVO();
+        
         //Controlador
-        ControladorLogin cLog = new ControladorLogin(fVa, fvlog, ldao, uvo,fmesa);
-        ControladorVistaAdmin cVa = new ControladorVistaAdmin(fVa,fUa,fvlog,ldao);
-        ControladorUsuriosAdmin cUa = new ControladorUsuriosAdmin(fUa,udao,uvo,ldao);
+        ControladorLogin cLog = new ControladorLogin(fVa, fvlog, ldao, uvo);
+        ControladorVistaAdmin cVa = new ControladorVistaAdmin(fVa,fUa, fMesa);
+        ControladorUsuriosAdmin cUa = new ControladorUsuriosAdmin(fUa,udao,uvo);
+        ControladorOrden cOrd = new ControladorOrden(fMesa, odao, ovo, fRegOrden);
+        ControladorRegistroOrden cRegOrden = new ControladorRegistroOrden(fRegOrden, rodao, rovo);
+        
+        
         //Pruebas Bau
         fvlog.setVisible(true);
         fvlog.setLocationRelativeTo(null);
