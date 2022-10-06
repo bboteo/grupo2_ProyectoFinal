@@ -4,6 +4,7 @@
  */
 package Controlador;
 
+import Modelo.LoginDAO;
 import Modelo.UsuarioDAO;
 import Modelo.UsuarioVO;
 import Vista.FrmUsuariosAdmin;
@@ -13,6 +14,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -20,15 +22,16 @@ import javax.swing.table.DefaultTableModel;
  * @author bboteo
  */
 public class ControladorUsuriosAdmin implements ActionListener, WindowListener, MouseListener{
-    
+    LoginDAO ldao = new LoginDAO();
     FrmUsuariosAdmin vUa = new FrmUsuariosAdmin();
     UsuarioDAO udao = new UsuarioDAO();
     UsuarioVO uvo = new UsuarioVO();
 
-    public ControladorUsuriosAdmin(FrmUsuariosAdmin vUa, UsuarioDAO udao, UsuarioVO uvo) {
+    public ControladorUsuriosAdmin(FrmUsuariosAdmin vUa, UsuarioDAO udao, UsuarioVO uvo,LoginDAO ldao) {
         this.vUa = vUa;
         this.udao = udao;
         this.uvo = uvo;
+        this.ldao = ldao;
         
         this.vUa.btnUsuarioAdminCreate.addActionListener(this);
         this.vUa.btnUsuarioAdminRead.addActionListener(this);
@@ -190,7 +193,10 @@ public class ControladorUsuriosAdmin implements ActionListener, WindowListener, 
     private boolean modificarU(){
         
         return udao.actualizarU(uvo);
+//        }
     }
+    
+    
     
     @Override
     public void actionPerformed(ActionEvent e) {

@@ -356,6 +356,6 @@ public class FrmMesas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jlbFecha;
-    private javax.swing.JLabel jlbNombre;
+    public javax.swing.JLabel jlbNombre;
     // End of variables declaration//GEN-END:variables
 }

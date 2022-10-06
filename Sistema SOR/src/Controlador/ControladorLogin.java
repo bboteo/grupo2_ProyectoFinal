@@ -7,6 +7,7 @@ package Controlador;
 import Modelo.LoginDAO;
 import Modelo.UsuarioVO;
 import Vista.FrmLogin;
+import Vista.FrmMesas;
 import Vista.FrmVistaAdmin;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,17 +20,19 @@ import java.util.ArrayList;
 public class ControladorLogin implements ActionListener {
 
     FrmVistaAdmin vadm = new FrmVistaAdmin();
+    FrmMesas vmesa = new FrmMesas();
     FrmLogin vlog = new FrmLogin();
     LoginDAO ldao = new LoginDAO();
     UsuarioVO uvo = new UsuarioVO();
 
     public ControladorLogin(FrmVistaAdmin vadm, FrmLogin vlog, LoginDAO ldao,
-            UsuarioVO uvo) {
+            UsuarioVO uvo, FrmMesas vmesa) {
 
         this.vadm = vadm;
         this.vlog = vlog;
         this.ldao = ldao;
         this.uvo = uvo;
+        this.vmesa = vmesa;
 
         this.vlog.btnIngresoSistema.addActionListener(this);
     }
@@ -47,10 +50,26 @@ public class ControladorLogin implements ActionListener {
                 for (UsuarioVO cre : datos) {
                     if (usuario.equals(cre.getUsername()) && contra.equals(cre.getContrasena())) {
                         if (cre.getTipo_usuario().equals("admin")) {
+                            this.vadm.lblNombreUsuario.setText(cre.getNombre());
+                            ldao.insertDatosLogin(cre.getId_usuario(),1);
                             this.vadm.setVisible(true);
                             vadm.setLocationRelativeTo(null);
                             vlog.dispose();
                         }
+                        if (cre.getTipo_usuario().equals("mesero") && contra.equals(cre.getContrasena())) {
+                            this.vmesa.jlbNombre.setText(cre.getNombre());
+                            ldao.insertDatosLogin(cre.getId_usuario(),1);
+                            this.vmesa.setVisible(true);
+                            vmesa.setLocationRelativeTo(null);
+                            vlog.dispose();
+                        } 
+                        if (cre.getTipo_usuario().equals("host") && contra.equals(cre.getContrasena())) {
+                            this.vmesa.jlbNombre.setText(cre.getNombre());
+                            ldao.insertDatosLogin(cre.getId_usuario(),1);
+                            this.vmesa.setVisible(true);
+                            vmesa.setLocationRelativeTo(null);
+                            vlog.dispose();
+                        } 
                     }
                 }
 
@@ -61,6 +80,8 @@ public class ControladorLogin implements ActionListener {
             vlog.jopCredenciales.showMessageDialog(vadm, "Porfavor ingresa tus datos");
         }
     }
+    
+   
 
     @Override
     public void actionPerformed(ActionEvent e) {
