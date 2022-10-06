@@ -22,15 +22,9 @@ public class RegistroOrdenDAO implements ConsultaRegistroOrden {
         Conexion c = new Conexion();
         try {
            c.conectar();
-           String query = "INSERT INTO dbogrupo2.Registro_orden(fecha, estado_orden, FK_id_orden) VALUES ('"+ rovo.getFecha()+"', '"+rovo.getEstado_orden()+"', "+rovo.getFkIdOrden()+")";
-                   
-                   
-                   
-//                   "INSERT INTO pais (nombre_pais, "
-//                   + "capital_pais, poblacion_pais, fecha_ingreso_pais) "
-//                   + "VALUES ('"+p.getNombrePais()+"', '"+p.getCapitalPais()+"', "
-//                   + p.getPoblacionPais()+", '"+p.getFechaIngPais()+"')";
-           
+           String query = "INSERT INTO dbogrupo2.Registro_orden(fecha, estado_orden, FK_id_orden) "
+                   + "VALUES ('"+ rovo.getFecha()+"', '"+rovo.getEstado_orden()+"', "+rovo.getFkIdOrden()+")";
+     
            c.consultasMultiples(query);
            
         } catch (Exception e) {

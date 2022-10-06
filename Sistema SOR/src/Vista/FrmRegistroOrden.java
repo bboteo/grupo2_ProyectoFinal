@@ -62,6 +62,7 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
         txtDetalle = new javax.swing.JTextArea();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -278,13 +279,16 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
         txtDetalle.setRows(5);
         jScrollPane1.setViewportView(txtDetalle);
 
-        jpTomaOrd.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 671, 620, 285));
+        jpTomaOrd.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 716, 620, 240));
 
-        jLabel8.setText("NOMBRE");
-        jpTomaOrd.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 372, 35));
+        jLabel8.setText("DETALLE DE COMPRA");
+        jpTomaOrd.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 670, 130, 35));
 
         jLabel9.setText("MESA");
         jpTomaOrd.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 290, 35));
+
+        jLabel10.setText("NOMBRE");
+        jpTomaOrd.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 372, 35));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -351,6 +355,7 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
     public javax.swing.JButton btnAceptar;
     public javax.swing.JButton btnCancelar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
