@@ -35,13 +35,13 @@ public class SistemaSOR {
         FrmLogin fvlog = new FrmLogin();
         FrmVistaAdmin fVa = new FrmVistaAdmin();
         FrmUsuariosAdmin fUa = new FrmUsuariosAdmin();
-<<<<<<< HEAD
+
         FrmFactura fFa = new FrmFactura();
-=======
+
         FrmMesas fMesa = new FrmMesas();
         FrmRegistroOrden fRegOrden = new FrmRegistroOrden();
         
->>>>>>> eadf88cf12d8b5042032eab8789dff7f2a37e037
+
         //Modelo
         UsuarioDAO udao = new UsuarioDAO();
         UsuarioVO uvo = new UsuarioVO();
@@ -54,20 +54,18 @@ public class SistemaSOR {
         RegistroOrdenVO rovo = new RegistroOrdenVO();
         
         //Controlador
-<<<<<<< HEAD
-        ControladorLogin cLog = new ControladorLogin(fVa, fvlog, ldao, uvo,fFa);
-        ControladorVistaAdmin cVa = new ControladorVistaAdmin(fVa,fUa);
-        ControladorUsuriosAdmin cUa = new ControladorUsuriosAdmin(fUa,udao,uvo);
+
+
         ControladorFactura cFa = new ControladorFactura(fFa,cdao,cvo);
-=======
-        ControladorLogin cLog = new ControladorLogin(fVa, fvlog, ldao, uvo,fMesa);
+
+        ControladorLogin cLog = new ControladorLogin(fVa, fvlog, ldao, uvo,fFa,fMesa);
         ControladorVistaAdmin cVa = new ControladorVistaAdmin(fVa,fUa,fvlog,ldao,fMesa);
         ControladorUsuriosAdmin cUa = new ControladorUsuriosAdmin(fUa,udao,uvo,ldao);
         ControladorOrden cOrd = new ControladorOrden(fMesa, odao, ovo, fRegOrden);
         ControladorRegistroOrden cRegOrden = new ControladorRegistroOrden(fRegOrden, rodao, rovo);
         
         
->>>>>>> eadf88cf12d8b5042032eab8789dff7f2a37e037
+
         //Pruebas Bau
         fvlog.setVisible(true);
         fvlog.setLocationRelativeTo(null);
