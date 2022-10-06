@@ -41,7 +41,7 @@ public class ControladorLogin implements ActionListener {
         String usuario = vlog.txtUsuarioLog.getText();
         String contra = String.valueOf(vlog.txtPassLog.getPassword());// el metodo getpasword regresa char
         //porque está encriptada pero con el value of lo paso a string y listo.
-        
+        //hola
         ArrayList<UsuarioVO> datos;
         datos = ldao.login(usuario, contra);
 
