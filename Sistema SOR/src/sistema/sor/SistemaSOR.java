@@ -7,15 +7,23 @@ package sistema.sor;
 
 import Controlador.ControladorFactura;
 import Controlador.ControladorLogin;
+import Controlador.ControladorOrden;
+import Controlador.ControladorRegistroOrden;
 import Controlador.ControladorUsuriosAdmin;
 import Controlador.ControladorVistaAdmin;
 import Modelo.ClienteDAO;
 import Modelo.ClienteVO;
 import Modelo.LoginDAO;
+import Modelo.OrdenDAO;
+import Modelo.OrdenVO;
+import Modelo.RegistroOrdenDAO;
+import Modelo.RegistroOrdenVO;
 import Modelo.UsuarioDAO;
 import Modelo.UsuarioVO;
 import Vista.FrmFactura;
 import Vista.FrmLogin;
+import Vista.FrmMesas;
+import Vista.FrmRegistroOrden;
 import Vista.FrmUsuariosAdmin;
 import Vista.FrmVistaAdmin;
 import conexion.Conexion;
@@ -27,18 +35,39 @@ public class SistemaSOR {
         FrmLogin fvlog = new FrmLogin();
         FrmVistaAdmin fVa = new FrmVistaAdmin();
         FrmUsuariosAdmin fUa = new FrmUsuariosAdmin();
+<<<<<<< HEAD
         FrmFactura fFa = new FrmFactura();
+=======
+        FrmMesas fMesa = new FrmMesas();
+        FrmRegistroOrden fRegOrden = new FrmRegistroOrden();
+        
+>>>>>>> eadf88cf12d8b5042032eab8789dff7f2a37e037
         //Modelo
         UsuarioDAO udao = new UsuarioDAO();
         UsuarioVO uvo = new UsuarioVO();
         ClienteDAO cdao = new ClienteDAO();
         ClienteVO cvo = new ClienteVO();
         LoginDAO ldao = new LoginDAO();
+        OrdenDAO odao = new OrdenDAO();
+        OrdenVO ovo = new OrdenVO();
+        RegistroOrdenDAO rodao = new RegistroOrdenDAO();
+        RegistroOrdenVO rovo = new RegistroOrdenVO();
+        
         //Controlador
+<<<<<<< HEAD
         ControladorLogin cLog = new ControladorLogin(fVa, fvlog, ldao, uvo,fFa);
         ControladorVistaAdmin cVa = new ControladorVistaAdmin(fVa,fUa);
         ControladorUsuriosAdmin cUa = new ControladorUsuriosAdmin(fUa,udao,uvo);
         ControladorFactura cFa = new ControladorFactura(fFa,cdao,cvo);
+=======
+        ControladorLogin cLog = new ControladorLogin(fVa, fvlog, ldao, uvo,fMesa);
+        ControladorVistaAdmin cVa = new ControladorVistaAdmin(fVa,fUa,fvlog,ldao,fMesa);
+        ControladorUsuriosAdmin cUa = new ControladorUsuriosAdmin(fUa,udao,uvo,ldao);
+        ControladorOrden cOrd = new ControladorOrden(fMesa, odao, ovo, fRegOrden);
+        ControladorRegistroOrden cRegOrden = new ControladorRegistroOrden(fRegOrden, rodao, rovo);
+        
+        
+>>>>>>> eadf88cf12d8b5042032eab8789dff7f2a37e037
         //Pruebas Bau
         fvlog.setVisible(true);
         fvlog.setLocationRelativeTo(null);

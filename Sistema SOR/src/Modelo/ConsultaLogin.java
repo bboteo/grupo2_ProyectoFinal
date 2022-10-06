@@ -13,5 +13,6 @@ import java.util.ArrayList;
 public interface ConsultaLogin {
     
     public ArrayList<UsuarioVO> login(String usr, String contra);
+    public void insertDatosLogin(int id_usr, int accion);
     
 }

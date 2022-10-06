@@ -9,8 +9,15 @@ package Modelo;
  * @author pc
  */
 public class OrdenVO {
+    
+    // TABLA ORDEN
     private int idOrden, numMesa, fkIdUsuario, fkIdRestaurante, fkIdCliente;
     private double subTotal;
+    
+    private String joinEstadoOrden;
+    private int joinIdRegistro;
+    
+    
 
     public int getIdOrden() {
         return idOrden;
@@ -59,9 +66,26 @@ public class OrdenVO {
     public void setSubTotal(double subTotal) {
         this.subTotal = subTotal;
     }
+
     
     
+    // para el join y ver los estados de las mesas
+    public String getJoinEstadoOrden() {
+        return joinEstadoOrden;
+    }
+
+    public void setJoinEstadoOrden(String joinEstadoOrden) {
+        this.joinEstadoOrden = joinEstadoOrden;
+    }
+
+    public int getJoinIdRegistro() {
+        return joinIdRegistro;
+    }
+
+    public void setJoinIdRegistro(int joinIdRegistro) {
+        this.joinIdRegistro = joinIdRegistro;
+    }
     
-    
-    
+
+ 
 }

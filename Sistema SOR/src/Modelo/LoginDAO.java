@@ -20,16 +20,19 @@ public class LoginDAO implements ConsultaLogin {
         ArrayList<UsuarioVO> datos = new ArrayList<>();
 
         try {
-            String query = "SELECT u.usr, u.contrasena, u.tipo_usuario "
+            String query = "SELECT u.usr, u.contrasena, u.tipo_usuario, u.id_usuario, u.nombre "
                     + "FROM usuario u "
                     + "WHERE u.usr = '" + usr + "' " + " AND u.contrasena = '"
                     + contra + "';";
             ResultSet rs = c.consultaDatos(query);
             while (rs.next()) {
                 UsuarioVO uvo = new UsuarioVO();
+                
                 uvo.setUsername(rs.getString(1));
                 uvo.setContrasena(rs.getString(2));
                 uvo.setTipo_usuario(rs.getString(3));
+                uvo.setId_usuario(rs.getInt(4));
+                uvo.setNombre(rs.getString(5));
                 datos.add(uvo);
             }
             c.desconectar();
@@ -39,5 +42,27 @@ public class LoginDAO implements ConsultaLogin {
 
         return datos;
     }
+
+    @Override
+    public void insertDatosLogin(int id_usr, int accion) {
+        Conexion con = new Conexion();
+        try{
+            con.conectar(); 
+            Extras.fechaHoy();
+            String sql = "INSERT INTO registro_usuario"
+                    +"(fecha, accion, FK_id_usuario)"
+                    +"VALUES ('"
+                    +Extras.fechaHoy()+"', " //como se ingresa la fechas a sql??
+                    +accion +", "
+                    +id_usr+" )";
+            con.consultasMultiples(sql);
+        }catch(Exception e){
+            System.err.println("MDATLOG"+e.getMessage());
+            con.desconectar();
+        }
+        
+    }
+
+   
 
 }
