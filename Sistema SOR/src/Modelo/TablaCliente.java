@@ -11,6 +11,6 @@ import java.util.ArrayList;
  * @author bboteo
  */
 public interface TablaCliente {
-    public boolean insertarC (ClienteVO c);
-    public ArrayList<ClienteVO> consultarC(ClienteVO c);
+    public boolean insertarC (ClienteVO cl);
+    public ArrayList<ClienteVO> consultarC(ClienteVO cl);
 }

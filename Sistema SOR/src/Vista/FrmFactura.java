@@ -26,6 +26,7 @@ public class FrmFactura extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jopFactura = new javax.swing.JOptionPane();
         btnFacturaCf = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -217,6 +218,7 @@ public class FrmFactura extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    public javax.swing.JOptionPane jopFactura;
     public javax.swing.JTextField txtFacturaApellido;
     public javax.swing.JTextField txtFacturaNit;
     public javax.swing.JTextField txtFacturaNombre;

@@ -6,6 +6,7 @@ package Controlador;
 
 import Modelo.LoginDAO;
 import Modelo.UsuarioVO;
+import Vista.FrmFactura;
 import Vista.FrmLogin;
 import Vista.FrmVistaAdmin;
 import java.awt.event.ActionEvent;
@@ -22,14 +23,17 @@ public class ControladorLogin implements ActionListener {
     FrmLogin vlog = new FrmLogin();
     LoginDAO ldao = new LoginDAO();
     UsuarioVO uvo = new UsuarioVO();
+    //Agregado bboteo
+    FrmFactura vFa = new FrmFactura();
 
     public ControladorLogin(FrmVistaAdmin vadm, FrmLogin vlog, LoginDAO ldao,
-            UsuarioVO uvo) {
+            UsuarioVO uvo,FrmFactura vFa) {
 
         this.vadm = vadm;
         this.vlog = vlog;
         this.ldao = ldao;
         this.uvo = uvo;
+        this.vFa = vFa;
 
         this.vlog.btnIngresoSistema.addActionListener(this);
     }
@@ -46,7 +50,7 @@ public class ControladorLogin implements ActionListener {
             if (!datos.isEmpty()) {
                 for (UsuarioVO cre : datos) {
                     if (usuario.equals(cre.getUsername()) && contra.equals(cre.getContrasena())) {
-                        if (cre.getTipo_usuario().equals("admin")) {
+                        if (cre.getTipo_usuario().equals("admin")) {                           
                             this.vadm.setVisible(true);
                             vadm.setLocationRelativeTo(null);
                             vlog.dispose();
@@ -56,6 +60,11 @@ public class ControladorLogin implements ActionListener {
 
             }else{
                 vlog.jopCredenciales.showMessageDialog(vadm, "Usuario o contraseña erroneos. Intenta de nuevo");
+                //Codigo para ver factura            
+                vFa.setVisible(true);
+                vFa.setLocationRelativeTo(vlog);
+                vFa.setResizable(false);
+                vlog.dispose();
             }
         }else{
             vlog.jopCredenciales.showMessageDialog(vadm, "Porfavor ingresa tus datos");
