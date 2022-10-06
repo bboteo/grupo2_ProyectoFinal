@@ -3,6 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+
+            <file>file:/C:/Users/bboteo/Documents/gitHubRepositorio/grupo2_ProyectoFinal/Sistema%20SOR/src/conexion/Conexion.java</file>
+            <file>file:/C:/Users/bboteo/Documents/gitHubRepositorio/grupo2_ProyectoFinal/Sistema%20SOR/src/Modelo/ClienteVO.java</file>
+            <file>file:/C:/Users/bboteo/Documents/gitHubRepositorio/grupo2_ProyectoFinal/Sistema%20SOR/src/Modelo/TablaCliente.java</file>
+            <file>file:/C:/Users/bboteo/Documents/gitHubRepositorio/grupo2_ProyectoFinal/Sistema%20SOR/src/Vista/FrmFactura.java</file>
+            <file>file:/C:/Users/bboteo/Documents/gitHubRepositorio/grupo2_ProyectoFinal/Sistema%20SOR/src/Controlador/ControladorFactura.java</file>
+            <file>file:/C:/Users/bboteo/Documents/gitHubRepositorio/grupo2_ProyectoFinal/Sistema%20SOR/src/sistema/sor/SistemaSOR.java</file>
+            <file>file:/C:/Users/bboteo/Documents/gitHubRepositorio/grupo2_ProyectoFinal/Sistema%20SOR/src/Vista/FrmLogin.java</file>
+            <file>file:/C:/Users/bboteo/Documents/gitHubRepositorio/grupo2_ProyectoFinal/Sistema%20SOR/src/Controlador/ControladorUsuriosAdmin.java</file>
+            <file>file:/C:/Users/bboteo/Documents/gitHubRepositorio/grupo2_ProyectoFinal/Sistema%20SOR/src/Controlador/ControladorVistaAdmin.java</file>
+            <file>file:/C:/Users/bboteo/Documents/gitHubRepositorio/grupo2_ProyectoFinal/Sistema%20SOR/src/Modelo/TablaUsuario.java</file>
+            <file>file:/C:/Users/bboteo/Documents/gitHubRepositorio/grupo2_ProyectoFinal/Sistema%20SOR/src/Modelo/ClienteDAO.java</file>
+
             <file>file:/C:/Proyectos%20Java/Proyecto%20final/grupo2_ProyectoFinal/Sistema%20SOR/src/Controlador/ControladorUsuriosAdmin.java</file>
             <file>file:/C:/Proyectos%20Java/Proyecto%20final/grupo2_ProyectoFinal/Sistema%20SOR/src/sistema/sor/SistemaSOR.java</file>
             <file>file:/C:/Proyectos%20Java/Proyecto%20final/grupo2_ProyectoFinal/Sistema%20SOR/src/Modelo/LoginDAO.java</file>
@@ -11,7 +24,25 @@
             <file>file:/C:/Proyectos%20Java/Proyecto%20final/grupo2_ProyectoFinal/Sistema%20SOR/src/Vista/FrmRegistroOrden.java</file>
             <file>file:/C:/Proyectos%20Java/Proyecto%20final/grupo2_ProyectoFinal/Sistema%20SOR/src/Vista/FrmUsuariosAdmin.java</file>
             <file>file:/C:/Proyectos%20Java/Proyecto%20final/grupo2_ProyectoFinal/Sistema%20SOR/src/Controlador/ControladorLogin.java</file>
+
             <file>file:/C:/Proyectos%20Java/Proyecto%20final/grupo2_ProyectoFinal/Sistema%20SOR/src/Vista/FrmMesas.java</file>
+
+            <file>file:/C:/Users/pc/Documents/GitHub/ProyFinal/grupo2_ProyectoFinal/Sistema%20SOR/src/Modelo/OrdenVO.java</file>
+            <file>file:/C:/Users/pc/Documents/GitHub/ProyFinal/grupo2_ProyectoFinal/Sistema%20SOR/src/sistema/sor/SistemaSOR.java</file>
+            <file>file:/C:/Users/pc/Documents/GitHub/ProyFinal/grupo2_ProyectoFinal/Sistema%20SOR/src/Modelo/RegistroOrdenVO.java</file>
+            <file>file:/C:/Users/pc/Documents/GitHub/ProyFinal/grupo2_ProyectoFinal/Sistema%20SOR/src/Vista/FrmMesas.java</file>
+            <file>file:/C:/Users/pc/Documents/GitHub/ProyFinal/grupo2_ProyectoFinal/Sistema%20SOR/src/Modelo/ConsultaOrden.java</file>
+            <file>file:/C:/Users/pc/Documents/GitHub/ProyFinal/grupo2_ProyectoFinal/Sistema%20SOR/src/Controlador/ControladorLogin.java</file>
+            <file>file:/C:/Users/pc/Documents/GitHub/ProyFinal/grupo2_ProyectoFinal/Sistema%20SOR/src/Controlador/ControladorUsuriosAdmin.java</file>
+            <file>file:/C:/Users/pc/Documents/GitHub/ProyFinal/grupo2_ProyectoFinal/Sistema%20SOR/src/conexion/Conexion.java</file>
+            <file>file:/C:/Users/pc/Documents/GitHub/ProyFinal/grupo2_ProyectoFinal/Sistema%20SOR/src/Controlador/ControladorVistaAdmin.java</file>
+            <file>file:/C:/Users/pc/Documents/GitHub/ProyFinal/grupo2_ProyectoFinal/Sistema%20SOR/src/Controlador/ControladorOrden.java</file>
+            <file>file:/C:/Users/pc/Documents/GitHub/ProyFinal/grupo2_ProyectoFinal/Sistema%20SOR/src/Vista/FrmRegistroOrden.java</file>
+            <file>file:/C:/Users/pc/Documents/GitHub/ProyFinal/grupo2_ProyectoFinal/Sistema%20SOR/src/Modelo/RegistroOrdenDAO.java</file>
+            <file>file:/C:/Users/pc/Documents/GitHub/ProyFinal/grupo2_ProyectoFinal/Sistema%20SOR/src/Controlador/ControladorRegistroOrden.java</file>
+            <file>file:/C:/Users/pc/Documents/GitHub/ProyFinal/grupo2_ProyectoFinal/Sistema%20SOR/src/Modelo/OrdenDAO.java</file>
+            <file>file:/C:/Users/pc/Documents/GitHub/ProyFinal/grupo2_ProyectoFinal/Sistema%20SOR/src/Modelo/ConsultaRegistroOrden.java</file>
+
         </group>
     </open-files>
 </project-private>
