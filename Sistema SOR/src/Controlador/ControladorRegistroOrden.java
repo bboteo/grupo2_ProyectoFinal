@@ -41,6 +41,7 @@ public class ControladorRegistroOrden implements ActionListener {
         this.vRegOrden = vRegOrden;
         this.rodao = rodao;
         this.rovo = rovo;
+        this.fFa = fFa;
         
        vRegOrden.btnAceptar.addActionListener(this);
        vRegOrden.btnCancelar.addActionListener(this);
