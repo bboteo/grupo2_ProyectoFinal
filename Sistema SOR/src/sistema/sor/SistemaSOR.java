@@ -58,7 +58,7 @@ public class SistemaSOR {
 
         ControladorFactura cFa = new ControladorFactura(fFa,cdao,cvo,fRegOrden);
 
-        ControladorLogin cLog = new ControladorLogin(fVa, fvlog, ldao, uvo,fFa,fMesa);
+        ControladorLogin cLog = new ControladorLogin(fVa, fvlog, ldao, uvo,fFa,fMesa,fUa);
         ControladorVistaAdmin cVa = new ControladorVistaAdmin(fVa,fUa,fvlog,ldao,fMesa);
         ControladorUsuriosAdmin cUa = new ControladorUsuriosAdmin(fUa,udao,uvo,ldao);
         ControladorOrden cOrd = new ControladorOrden(fMesa, odao, ovo, fRegOrden);
