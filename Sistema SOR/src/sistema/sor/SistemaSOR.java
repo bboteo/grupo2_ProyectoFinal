@@ -62,7 +62,7 @@ public class SistemaSOR {
         ControladorVistaAdmin cVa = new ControladorVistaAdmin(fVa,fUa,fvlog,ldao,fMesa);
         ControladorUsuriosAdmin cUa = new ControladorUsuriosAdmin(fUa,udao,uvo,ldao);
         ControladorOrden cOrd = new ControladorOrden(fMesa, odao, ovo, fRegOrden);
-        ControladorRegistroOrden cRegOrden = new ControladorRegistroOrden(fRegOrden, rodao, rovo);
+        ControladorRegistroOrden cRegOrden = new ControladorRegistroOrden(fRegOrden, rodao, rovo, fFa);
         
         
 

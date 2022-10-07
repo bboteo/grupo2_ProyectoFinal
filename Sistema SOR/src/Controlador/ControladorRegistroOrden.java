@@ -10,6 +10,7 @@ import Modelo.OrdenDAO;
 import Modelo.OrdenVO;
 import Modelo.RegistroOrdenDAO;
 import Modelo.RegistroOrdenVO;
+import Vista.FrmFactura;
 import Vista.FrmMesas;
 import Vista.FrmRegistroOrden;
 import java.awt.event.ActionEvent;
@@ -25,6 +26,7 @@ public class ControladorRegistroOrden implements ActionListener {
     RegistroOrdenDAO rodao = new RegistroOrdenDAO();
     RegistroOrdenVO rovo = new RegistroOrdenVO();
     
+    
     // PARA LA ORDEN
     OrdenDAO odao = new OrdenDAO();
     OrdenVO ovo = new OrdenVO();
@@ -33,15 +35,17 @@ public class ControladorRegistroOrden implements ActionListener {
     DetalleOrdenDAO dodao = new DetalleOrdenDAO();
     DetalleOrdenVO dovo = new DetalleOrdenVO();
    
-    
+    FrmFactura fFa = new FrmFactura();
 
-    public ControladorRegistroOrden(FrmRegistroOrden vRegOrden,  RegistroOrdenDAO rodao, RegistroOrdenVO rovo) {
+    public ControladorRegistroOrden(FrmRegistroOrden vRegOrden,  RegistroOrdenDAO rodao, RegistroOrdenVO rovo, FrmFactura fFa) {
         this.vRegOrden = vRegOrden;
         this.rodao = rodao;
         this.rovo = rovo;
         
        vRegOrden.btnAceptar.addActionListener(this);
        vRegOrden.btnCancelar.addActionListener(this);
+       vRegOrden.btnFacturar.addActionListener(this);
+       vRegOrden.btnCerrarMesa.addActionListener(this);
                     
     }
     
@@ -65,6 +69,17 @@ public class ControladorRegistroOrden implements ActionListener {
         
         if (e.getSource().equals(vRegOrden.btnCancelar)){
             vRegOrden.dispose();
+        }
+        
+         if (e.getSource().equals(vRegOrden.btnFacturar)){
+             fFa.lblFacutraOrden.setText("37");
+             fFa.setVisible(true);
+             fFa.setLocationRelativeTo(vRegOrden);
+            
+        }
+         
+         if (e.getSource().equals(vRegOrden.btnCerrarMesa)){
+            
         }
         
         
