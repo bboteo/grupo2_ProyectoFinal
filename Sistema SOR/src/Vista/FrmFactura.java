@@ -41,6 +41,8 @@ public class FrmFactura extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtFacturaNit = new javax.swing.JTextField();
         btnFacturaBuscar = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        lblFacutraOrden = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -119,6 +121,12 @@ public class FrmFactura extends javax.swing.JFrame {
         btnFacturaBuscar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnFacturaBuscar.setText("Buscar");
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel6.setText("No.Orden");
+
+        lblFacutraOrden.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblFacutraOrden.setText("###");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -129,32 +137,41 @@ public class FrmFactura extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnFacturaFactura)
+                        .addGap(32, 32, 32)
+                        .addComponent(btnFacturaCancelar)
+                        .addGap(90, 90, 90))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(17, 17, 17)
-                        .addComponent(btnFacturaCf)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel6)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblFacutraOrden)
+                                .addGap(19, 19, 19))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnFacturaCf)
+                                .addGap(18, 18, 18)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtFacturaNit, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnFacturaBuscar)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnFacturaFactura)
-                .addGap(31, 31, 31)
-                .addComponent(btnFacturaCancelar)
-                .addGap(89, 89, 89))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(lblFacutraOrden)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnFacturaCf)
                     .addComponent(jLabel2)
@@ -162,11 +179,11 @@ public class FrmFactura extends javax.swing.JFrame {
                     .addComponent(btnFacturaBuscar))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnFacturaFactura)
-                    .addComponent(btnFacturaCancelar))
-                .addContainerGap(9, Short.MAX_VALUE))
+                    .addComponent(btnFacturaCancelar)
+                    .addComponent(btnFacturaFactura))
+                .addContainerGap())
         );
 
         pack();
@@ -217,8 +234,10 @@ public class FrmFactura extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JOptionPane jopFactura;
+    public javax.swing.JLabel lblFacutraOrden;
     public javax.swing.JTextField txtFacturaApellido;
     public javax.swing.JTextField txtFacturaNit;
     public javax.swing.JTextField txtFacturaNombre;
