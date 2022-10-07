@@ -18,8 +18,8 @@ public class DetalleOrdenDAO implements ConsultaDetalleOrden{
         Conexion c = new Conexion();
         try {
            c.conectar();
-           String query = "INSERT INTO dbogrupo2.Detalle_orden(cantidad, sub_total, FK_id_orden, FK_id_producto) ";
-                 //  + "VALUES ('"+ dovo.+"', '"+dovo.getFkIDOrden()+"', "+dovo.getFkIdProducto()+")";
+           String query = "INSERT INTO dbogrupo2.Detalle_orden(cantidad, sub_total, FK_id_orden, FK_id_producto) "
+                   + "VALUES (" + dovo.getCantidad()+", "+ dovo.getSubTotal()+ ", " + dovo.getFkIDOrden()+", "+ dovo.getFkIdProducto()+ ")";
      
            c.consultasMultiples(query);
            

@@ -65,6 +65,8 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
         lbUsuario = new javax.swing.JLabel();
         lbMesa1 = new javax.swing.JLabel();
         lbUsuario1 = new javax.swing.JLabel();
+        btnFacturar = new javax.swing.JButton();
+        btnCerrarMesa = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -284,6 +286,22 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
 
         lbUsuario1.setText("NOMBRE");
 
+        btnFacturar.setBackground(new java.awt.Color(51, 102, 255));
+        btnFacturar.setText("Facturar");
+        btnFacturar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFacturarActionPerformed(evt);
+            }
+        });
+
+        btnCerrarMesa.setBackground(new java.awt.Color(102, 102, 102));
+        btnCerrarMesa.setText("Cerrar Mesa");
+        btnCerrarMesa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarMesaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jpTomaOrdLayout = new javax.swing.GroupLayout(jpTomaOrd);
         jpTomaOrd.setLayout(jpTomaOrdLayout);
         jpTomaOrdLayout.setHorizontalGroup(
@@ -318,7 +336,11 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jpTomaOrdLayout.createSequentialGroup()
                 .addGap(48, 48, 48)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addGroup(jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnFacturar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCerrarMesa, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)))
         );
         jpTomaOrdLayout.setVerticalGroup(
             jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -349,7 +371,12 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jpTomaOrdLayout.createSequentialGroup()
+                        .addComponent(btnFacturar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(btnCerrarMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -378,6 +405,14 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnFacturarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFacturarActionPerformed
+
+    private void btnCerrarMesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarMesaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCerrarMesaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -417,6 +452,8 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnAceptar;
     public javax.swing.JButton btnCancelar;
+    public javax.swing.JButton btnCerrarMesa;
+    public javax.swing.JButton btnFacturar;
     public javax.swing.JLabel jLabel12;
     public javax.swing.JLabel jLabel14;
     public javax.swing.JLabel jLabel16;
