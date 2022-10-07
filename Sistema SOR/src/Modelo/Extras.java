@@ -21,5 +21,23 @@ public class Extras {
         return fechaHoy;
     }
     
+    public String cronometro(){
+        String tiempo="";
+        int min = 0;
+        int seg = 0;
+        for(min = 0; min<60;min++){
+            for(seg=0; seg<60; seg++ ){
+                tiempo = min+":"+ seg;
+                try{
+                    Thread.sleep(1000);
+                }catch(InterruptedException e){
+                    System.err.println("Error en: " + e);
+                }
+            }
+                   
+        }
+        return tiempo;
+    }
+    
     
 }

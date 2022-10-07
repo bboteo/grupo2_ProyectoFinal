@@ -40,22 +40,13 @@ public class RegistroOrdenDAO implements ConsultaRegistroOrden {
     @Override
     public ArrayList<RegistroOrdenVO> consultar() {
             
-         Conexion c = new Conexion();
+        Conexion c = new Conexion();
         ArrayList<RegistroOrdenVO> consultaRegOrden = new ArrayList<>();
         
         try{
              c.conectar();
-            String query = "SELECT * FROM dbogrupo2.Registro_orden";
+            String query = "SELECT id_registro, fecha, estado_orden, FK_id_orden FROM dbogrupo2.Registro_orden";
                     
-                    
-                    
-//                    "SELECT id_registro, estado_orden, id_orden, num_mesa "
-//                    + "FROM dbogrupo2.Registro_orden "
-//                    + "INNER JOIN dbogrupo2.orden "
-//                    + "ON dbogrupo2.Registro_orden.FK_id_orden = dbogrupo2.orden.id_orden "
-//                    + "WHERE dbogrupo2.orden.num_mesa = 3 "
-//                    + "ORDER BY id_registro DESC LIMIT 1";
-//            
                         
             ResultSet rs = c.consultaDatos(query);
             while(rs.next()){
@@ -92,7 +83,7 @@ public class RegistroOrdenDAO implements ConsultaRegistroOrden {
     }
 
     @Override
-    public ArrayList<RegistroOrdenVO> actualizar(RegistroOrdenVO ordenVO) {
+    public ArrayList<RegistroOrdenVO> actualizar(RegistroOrdenVO rovoO) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
   

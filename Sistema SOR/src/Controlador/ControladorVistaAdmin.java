@@ -28,7 +28,7 @@ public class ControladorVistaAdmin implements ActionListener, WindowListener{
     FrmVistaAdmin vAd = new FrmVistaAdmin();
     FrmUsuariosAdmin vUd = new FrmUsuariosAdmin();
     LoginDAO ldao = new LoginDAO();
-
+    
     public ControladorVistaAdmin(FrmVistaAdmin vAd,FrmUsuariosAdmin vUd,FrmLogin vlog,
             LoginDAO ldao,FrmMesas vMesa) {
         this.vAd = vAd;
@@ -76,8 +76,9 @@ public class ControladorVistaAdmin implements ActionListener, WindowListener{
         }
         //Para ver mesas
         if(e.getSource()==vAd.btnVistaAdminVerMesas){
-            
+            this.vMesa.jlbNombre.setText(this.vAd.lblNombreUsuario.getText());
             this.vMesa.setVisible(true   );  //JM
+            
             this.vMesa.setLocationRelativeTo(null); //JM
         }
         //Para salir y volver al login

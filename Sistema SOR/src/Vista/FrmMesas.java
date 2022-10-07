@@ -64,51 +64,39 @@ public class FrmMesas extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(807, 1080));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jlbNombre.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jlbNombre.setText("Nombre");
-        getContentPane().add(jlbNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 86, 304, -1));
 
         jlbFecha.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jlbFecha.setText("Fecha");
-        getContentPane().add(jlbFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(605, 86, 119, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setText("4");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 453, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel2.setText("5");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 453, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel3.setText("6");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 450, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel4.setText("1");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(148, 152, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel5.setText("2");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(385, 152, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel6.setText("3");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel7.setText("7");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(147, 762, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel8.setText("8");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 762, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel9.setText("9");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 760, -1, -1));
 
         btnMesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/ic_mesa_gris200.png"))); // NOI18N
         btnMesa3.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +104,6 @@ public class FrmMesas extends javax.swing.JFrame {
                 btnMesa3ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMesa3, new org.netbeans.lib.awtextra.AbsoluteConstraints(518, 196, -1, -1));
 
         btnMesa1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/ic_mesa_gris200.png"))); // NOI18N
         btnMesa1.addActionListener(new java.awt.event.ActionListener() {
@@ -124,7 +111,6 @@ public class FrmMesas extends javax.swing.JFrame {
                 btnMesa1ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMesa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 196, -1, -1));
 
         btnMesa2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/ic_mesa_gris200.png"))); // NOI18N
         btnMesa2.addActionListener(new java.awt.event.ActionListener() {
@@ -132,7 +118,6 @@ public class FrmMesas extends javax.swing.JFrame {
                 btnMesa2ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMesa2, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 196, -1, -1));
 
         btnMesa4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/ic_mesa_gris200.png"))); // NOI18N
         btnMesa4.addActionListener(new java.awt.event.ActionListener() {
@@ -140,7 +125,6 @@ public class FrmMesas extends javax.swing.JFrame {
                 btnMesa4ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMesa4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 497, -1, -1));
 
         btnMesa5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/ic_mesa_gris200.png"))); // NOI18N
         btnMesa5.addActionListener(new java.awt.event.ActionListener() {
@@ -148,7 +132,6 @@ public class FrmMesas extends javax.swing.JFrame {
                 btnMesa5ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMesa5, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 497, -1, -1));
 
         btnMesa6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/ic_mesa_gris200.png"))); // NOI18N
         btnMesa6.addActionListener(new java.awt.event.ActionListener() {
@@ -156,7 +139,6 @@ public class FrmMesas extends javax.swing.JFrame {
                 btnMesa6ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMesa6, new org.netbeans.lib.awtextra.AbsoluteConstraints(518, 497, -1, -1));
 
         btnMesa7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/ic_mesa_gris200.png"))); // NOI18N
         btnMesa7.addActionListener(new java.awt.event.ActionListener() {
@@ -164,7 +146,6 @@ public class FrmMesas extends javax.swing.JFrame {
                 btnMesa7ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMesa7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 812, -1, -1));
 
         btnMesa8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/ic_mesa_gris200.png"))); // NOI18N
         btnMesa8.addActionListener(new java.awt.event.ActionListener() {
@@ -172,7 +153,6 @@ public class FrmMesas extends javax.swing.JFrame {
                 btnMesa8ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMesa8, new org.netbeans.lib.awtextra.AbsoluteConstraints(283, 812, -1, -1));
 
         btnMesa9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/ic_mesa_gris200.png"))); // NOI18N
         btnMesa9.addActionListener(new java.awt.event.ActionListener() {
@@ -180,13 +160,124 @@ public class FrmMesas extends javax.swing.JFrame {
                 btnMesa9ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMesa9, new org.netbeans.lib.awtextra.AbsoluteConstraints(518, 812, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel10.setText("ESTADO MESAS");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 16, -1, -1));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 740, 670, 10));
-        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 670, 10));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jLabel10))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(jlbNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(239, 239, 239)
+                .addComponent(jlbFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(148, 148, 148)
+                .addComponent(jLabel4)
+                .addGap(224, 224, 224)
+                .addComponent(jLabel5)
+                .addGap(212, 212, 212)
+                .addComponent(jLabel6))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(btnMesa1)
+                .addGap(27, 27, 27)
+                .addComponent(btnMesa2)
+                .addGap(29, 29, 29)
+                .addComponent(btnMesa3))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(153, 153, 153)
+                .addComponent(jLabel1)
+                .addGap(217, 217, 217)
+                .addComponent(jLabel2)
+                .addGap(214, 214, 214)
+                .addComponent(jLabel3))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(btnMesa4)
+                .addGap(27, 27, 27)
+                .addComponent(btnMesa5)
+                .addGap(29, 29, 29)
+                .addComponent(btnMesa6))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(147, 147, 147)
+                .addComponent(jLabel7)
+                .addGap(220, 220, 220)
+                .addComponent(jLabel8)
+                .addGap(217, 217, 217)
+                .addComponent(jLabel9))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(btnMesa7)
+                .addGap(27, 27, 27)
+                .addComponent(btnMesa8)
+                .addGap(29, 29, 29)
+                .addComponent(btnMesa9))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel10)
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jlbNombre)
+                    .addComponent(jlbFecha))
+                .addGap(39, 39, 39)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5))))
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnMesa1)
+                    .addComponent(btnMesa2)
+                    .addComponent(btnMesa3))
+                .addGap(28, 28, 28)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))))
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnMesa4)
+                    .addComponent(btnMesa5)
+                    .addComponent(btnMesa6))
+                .addGap(37, 37, 37)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8))))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnMesa7)
+                    .addComponent(btnMesa8)
+                    .addComponent(btnMesa9)))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -10,11 +10,11 @@ import java.util.ArrayList;
  *
  * @author pc
  */
-public interface ConsultaRegistroOrden {
+public interface ConsultaDetalleOrden {
     
-    public boolean insertar (RegistroOrdenVO rovo);
-    public ArrayList<RegistroOrdenVO> consultar();
-    public void eliminiar (int regOrdElim);
-    public ArrayList<RegistroOrdenVO> actualizar(RegistroOrdenVO rovo);
+     public boolean insertar (DetalleOrdenVO dovo);
+    public ArrayList<DetalleOrdenVO> consultar();
+    public void eliminiar (int detOrden);
+    public ArrayList<DetalleOrdenVO> actualizar(DetalleOrdenVO dovo);
     
 }
