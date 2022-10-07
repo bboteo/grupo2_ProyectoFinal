@@ -57,7 +57,8 @@ public class ControladorLogin implements ActionListener {
 
                         if (cre.getTipo_usuario().equals("admin")) {
                             this.vadm.lblNombreUsuario.setText(cre.getNombre());
-                            this.vadm.lblid.setText(String.valueOf(cre.getId_usuario()));
+                            this.vadm.lblVistaAdminId.setText(String.valueOf(cre.getId_usuario()));
+                            this.vadm.lblVistaAdminId.setVisible(false);//jg 0
                             ldao.insertDatosLogin(cre.getId_usuario(), 1);
                             this.vadm.setVisible(true);
                             vadm.setLocationRelativeTo(null);

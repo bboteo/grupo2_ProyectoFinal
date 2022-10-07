@@ -52,8 +52,9 @@ public class ControladorVistaAdmin implements ActionListener, WindowListener{
         this.vAd.addWindowListener(this);
     }
     
-    public void logout(){
-       String usuario = this.vAd.lblNombreUsuario.getText();
+    public void logout(){ //jg 0
+       String usuario = this.vAd.lblVistaAdminId.getText();
+       ldao.insertDatosLogin(Integer.parseInt(usuario), 0);
      }
    
 
@@ -94,12 +95,12 @@ public class ControladorVistaAdmin implements ActionListener, WindowListener{
 
     @Override
     public void windowClosing(WindowEvent e) {
-        
+        this.logout(); //jg 0
     }
 
     @Override
     public void windowClosed(WindowEvent e) {
-        this.logout();
+        //  this.logout();
     }
 
     @Override
