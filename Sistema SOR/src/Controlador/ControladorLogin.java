@@ -9,6 +9,7 @@ import Modelo.UsuarioVO;
 import Vista.FrmFactura;
 import Vista.FrmLogin;
 import Vista.FrmMesas;
+import Vista.FrmUsuariosAdmin;
 import Vista.FrmVistaAdmin;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,9 +28,9 @@ public class ControladorLogin implements ActionListener {
     UsuarioVO uvo = new UsuarioVO();
     //Agregado bboteo
     FrmFactura vFa = new FrmFactura();
-
+    FrmUsuariosAdmin vua = new FrmUsuariosAdmin(); //jg
     public ControladorLogin(FrmVistaAdmin vadm, FrmLogin vlog, LoginDAO ldao,
-            UsuarioVO uvo, FrmFactura vFa, FrmMesas vmesa) {
+            UsuarioVO uvo, FrmFactura vFa, FrmMesas vmesa,FrmUsuariosAdmin vua) {
 
         this.vadm = vadm;
         this.vlog = vlog;
@@ -37,7 +38,7 @@ public class ControladorLogin implements ActionListener {
         this.uvo = uvo;
         this.vFa = vFa;
         this.vmesa = vmesa;
-
+        this.vua = vua;
         this.vlog.btnIngresoSistema.addActionListener(this);
     }
 
@@ -56,6 +57,7 @@ public class ControladorLogin implements ActionListener {
 
                         if (cre.getTipo_usuario().equals("admin")) {
                             this.vadm.lblNombreUsuario.setText(cre.getNombre());
+                            this.vadm.lblid.setText(String.valueOf(cre.getId_usuario()));
                             ldao.insertDatosLogin(cre.getId_usuario(), 1);
                             this.vadm.setVisible(true);
                             vadm.setLocationRelativeTo(null);
