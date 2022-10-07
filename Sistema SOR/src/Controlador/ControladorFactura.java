@@ -7,6 +7,7 @@ package Controlador;
 import Modelo.ClienteDAO;
 import Modelo.ClienteVO;
 import Vista.FrmFactura;
+import Vista.FrmRegistroOrden;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
@@ -24,11 +25,16 @@ public class ControladorFactura implements ActionListener, WindowListener{
     ClienteVO cvo = new ClienteVO();
     //Para validar si el cliente es nuevo
     private boolean clienteNuevo = false;
+    //JP
+    FrmRegistroOrden vRo = new FrmRegistroOrden();
     
-    public ControladorFactura(FrmFactura vFa, ClienteDAO cdao, ClienteVO cvo) {
+    
+    public ControladorFactura(FrmFactura vFa, ClienteDAO cdao, ClienteVO cvo,
+            FrmRegistroOrden vRo) {
         this.vFa = vFa;
         this.cdao = cdao;
         this.cvo = cvo;
+        this.vRo = vRo;
         
         vFa.btnFacturaBuscar.addActionListener(this);
         vFa.btnFacturaCf.addActionListener(this);
