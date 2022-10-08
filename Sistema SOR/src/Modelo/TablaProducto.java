@@ -15,6 +15,7 @@ public interface TablaProducto {
     //CRUD BASICO
     public boolean insertarP (ProductoVO pvo);
     public ArrayList<ProductoVO> consultarP();
+    public ArrayList<ProductoVO> consultaExactaP(ProductoVO pvo);
     public boolean eliminarP(ProductoVO pvo);
     public boolean actualizarP(ProductoVO pvo);
 }
