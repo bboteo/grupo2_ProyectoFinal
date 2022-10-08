@@ -15,24 +15,33 @@ import java.util.ArrayList;
 public class OrdenDAO implements ConsultaOrden {
 
     @Override
-    public boolean insertar(OrdenVO ordenVO) {
-        
-        return false;
-        
-        
-      
-        
+    public boolean insertar(OrdenVO ovo) {
+        Conexion c = new Conexion();
+        try {
+           c.conectar();
+           String query = "INSERT INTO dbogrupo2.orden(num_mesa, total_venta, FK_id_usuario, FK_id_restaurante, FK_id_clienet) "
+                   + "VALUES (" + ovo.getNumMesa() +", "+ ovo.getSubTotal() + ", " + ovo.getFkIdUsuario() +", "+ ovo.getFkIdRestaurante() + ", " + ovo.getFkIdCliente() + ")";
+     
+           c.consultasMultiples(query);
+           
+        } catch (Exception e) {
+            System.err.println("Error[MInsertar]: " + e.getMessage());
+            c.desconectar();
+            return false;
+        }
+        c.desconectar();
+        return true;
     }
 
      @Override
-    public ArrayList<OrdenVO> consultar(int mesa) { 
+    public ArrayList<OrdenVO> consultar(int n) { 
     Conexion c = new Conexion();
           ArrayList<OrdenVO> consultaOrden = new ArrayList<>();
         
         try{
              c.conectar();
             String query = 
-                    "SELECT id_orden, num_mesa, total_venta, FK_id_usuario, FK_id_restaurante, FK_id_cliente FROM dbogrupo2.orden";
+                    "SELECT id_orden, num_mesa, total_venta, FK_id_usuario, FK_id_restaurante, FK_id_cliente FROM dbogrupo2.orden WHERE id_orden = " + n;
                         
             ResultSet rs = c.consultaDatos(query);
             while(rs.next()){
