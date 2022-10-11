@@ -108,11 +108,22 @@ public class OrdenDAO implements ConsultaOrden {
     }
 
     @Override
-    public ArrayList<OrdenVO> actualizar(OrdenVO ordenVO) {
-        
-       ArrayList<OrdenVO> test = new ArrayList<>();
-       return test;
-        
+    public boolean actualizarXfac(OrdenVO ovo) {
+       Conexion c = new Conexion();
+        try {
+            c.conectar();
+            String query ="UPDATE dbogrupo2.orden AS o SET " 
+                    + " o.total_venta = "+ovo.getSubTotal()+" , "
+                    + " o.FK_id_cliente = "+ovo.getFkIdCliente()
+                    + " WHERE o.id_orden = "+ovo.getIdOrden();
+            c.consultasMultiples(query);
+        } catch (Exception e) {
+            System.err.println("Error al actualizar Orden "+e);
+            c.desconectar();
+            return false;
+        }
+        c.desconectar();
+        return true;        
     }
     
 }

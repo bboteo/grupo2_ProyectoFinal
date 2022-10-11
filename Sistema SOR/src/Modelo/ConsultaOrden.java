@@ -10,6 +10,6 @@ public interface ConsultaOrden {
     public ArrayList<OrdenVO> consultar(int mesa);
      public ArrayList<OrdenVO> consultarJoin(int mesa);
     public void eliminiar (int ordVOElim);
-    public ArrayList<OrdenVO> actualizar(OrdenVO ordenVO);
+    public boolean actualizarXfac(OrdenVO ovo);
     
 }
