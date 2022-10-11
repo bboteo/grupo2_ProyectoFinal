@@ -8,6 +8,8 @@ import Modelo.DetalleOrdenDAO;
 import Modelo.DetalleOrdenVO;
 import Modelo.OrdenDAO;
 import Modelo.OrdenVO;
+import Modelo.ProductoDAO;
+import Modelo.ProductoVO;
 import Modelo.RegistroOrdenDAO;
 import Modelo.RegistroOrdenVO;
 import Vista.FrmFactura;
@@ -39,12 +41,18 @@ public class ControladorRegistroOrden implements ActionListener, WindowListener 
     DetalleOrdenVO dovo = new DetalleOrdenVO();
    
     //PRODUCTO
-   // 
-   //
+    ProductoDAO pdao = new ProductoDAO();
+    ProductoVO pvo = new ProductoVO();
     
+    //Vista Factura
     FrmFactura fFa = new FrmFactura();
     
    // String[] variable = {vRegOrd.lbMesa.getText(), vRegOrd.lbMenu1.getText(),  vRegOrd.spMenu1.getValue().toString()};
+    
+    ArrayList<ProductoVO> prodConsulta = new ArrayList<>();
+    
+    //SUMATORIA
+    Double totalOrden =0.0;   //// 
 
     public ControladorRegistroOrden(FrmRegistroOrden vRegOrden,  RegistroOrdenDAO rodao, RegistroOrdenVO rovo, FrmFactura fFa) {
         this.vRegOrd = vRegOrden;
@@ -54,54 +62,87 @@ public class ControladorRegistroOrden implements ActionListener, WindowListener 
         
        vRegOrden.btnAceptar.addActionListener(this);
        vRegOrden.btnCancelar.addActionListener(this);
+       vRegOrden.btnServido.addActionListener(this);
        vRegOrden.btnFacturar.addActionListener(this);
        vRegOrden.btnCerrarMesa.addActionListener(this);
+       
+    
        
        vRegOrden.addWindowListener(this);
                     
     }
     
+    
+    private void consultarProducto() {
+        
+
+        prodConsulta = pdao.consultarP();
+
+        //for (int i = 0; i < 8; i++) {
+
+            this.vRegOrd.lbMenu1.setText(prodConsulta.get(0).getNombreProducto());
+            this.vRegOrd.lbMenu2.setText(prodConsulta.get(1).getNombreProducto());
+            this.vRegOrd.lbMenu3.setText(prodConsulta.get(2).getNombreProducto());
+            this.vRegOrd.lbMenu4.setText(prodConsulta.get(3).getNombreProducto());
+            this.vRegOrd.lbMenu5.setText(prodConsulta.get(4).getNombreProducto());
+            this.vRegOrd.lbMenu6.setText(prodConsulta.get(5).getNombreProducto());
+            this.vRegOrd.lbMenu7.setText(prodConsulta.get(6).getNombreProducto());
+            this.vRegOrd.lbMenu8.setText(prodConsulta.get(7).getNombreProducto());
+            //VER DONDE SE VAN A INGRESAR LAS IMAGENES.
+            
+
+    }
+
     private ArrayList<String[]> leerDatos(){
         ArrayList<String[]> tomaOrden = new ArrayList<>();
-        String mesa, nombreMenu1, cantMenu1;
-
+        
+        // variable = codigo,  nombre, cantidad,  precio unitario, sub Total.
         if(!(vRegOrd.spMenu1.getValue().toString()).equals("0")){
-           String[] variable = {vRegOrd.lbMesa.getText(), vRegOrd.lbMenu1.getText(),  vRegOrd.spMenu1.getValue().toString()};
-            System.out.println(variable[0] + variable[1] + variable[2]);
+            float total = Integer.valueOf(vRegOrd.spMenu1.getValue().toString()) * prodConsulta.get(0).getPrecioProducto();
+            
+           String[] variable = {String.valueOf(prodConsulta.get(0).getIdProducto()) , vRegOrd.lbMenu1.getText(),  vRegOrd.spMenu1.getValue().toString(), String.valueOf(prodConsulta.get(0).getPrecioProducto()), String.valueOf(total)};
            tomaOrden.add(variable);
         }
 
         if(!(vRegOrd.spMenu2.getValue().toString()).equals("0")){
-             String[] variable = {vRegOrd.lbMesa.getText(), vRegOrd.lbMenu2.getText(),  vRegOrd.spMenu2.getValue().toString()};
+            float total = Integer.valueOf(vRegOrd.spMenu2.getValue().toString()) * prodConsulta.get(1).getPrecioProducto();
+            String[] variable = {String.valueOf(prodConsulta.get(1).getIdProducto()) , vRegOrd.lbMenu2.getText(),  vRegOrd.spMenu2.getValue().toString(), String.valueOf(prodConsulta.get(1).getPrecioProducto()), String.valueOf(total)};
+             //String[] variable = {vRegOrd.lbMesa.getText(), vRegOrd.lbMenu2.getText(),  vRegOrd.spMenu2.getValue().toString()};
             tomaOrden.add(variable);
         }
 
         if(!(vRegOrd.spMenu3.getValue().toString()).equals("0")){
-             String[] variable = {vRegOrd.lbMesa.getText(), vRegOrd.lbMenu3.getText(),  vRegOrd.spMenu3.getValue().toString()};
+             float total = Integer.valueOf(vRegOrd.spMenu3.getValue().toString()) * prodConsulta.get(2).getPrecioProducto();
+            String[] variable = {String.valueOf(prodConsulta.get(2).getIdProducto()) , vRegOrd.lbMenu3.getText(),  vRegOrd.spMenu3.getValue().toString(), String.valueOf(prodConsulta.get(2).getPrecioProducto()), String.valueOf(total)};
             tomaOrden.add(variable);
         }
 
         if(!(vRegOrd.spMenu4.getValue().toString()).equals("0")){
-             String[] variable = {vRegOrd.lbMesa.getText(), vRegOrd.lbMenu4.getText(),  vRegOrd.spMenu4.getValue().toString()};
+             float total = Integer.valueOf(vRegOrd.spMenu4.getValue().toString()) * prodConsulta.get(3).getPrecioProducto();
+            String[] variable = {String.valueOf(prodConsulta.get(3).getIdProducto()) , vRegOrd.lbMenu4.getText(),  vRegOrd.spMenu4.getValue().toString(), String.valueOf(prodConsulta.get(3).getPrecioProducto()), String.valueOf(total)};
             tomaOrden.add(variable);
         }
 
         if(!(vRegOrd.spMenu5.getValue().toString()).equals("0")){
-             String[] variable = {vRegOrd.lbMesa.getText(), vRegOrd.lbMenu5.getText(),  vRegOrd.spMenu5.getValue().toString()};
+             float total = Integer.valueOf(vRegOrd.spMenu5.getValue().toString()) * prodConsulta.get(4).getPrecioProducto();
+            String[] variable = {String.valueOf(prodConsulta.get(4).getIdProducto()) , vRegOrd.lbMenu5.getText(),  vRegOrd.spMenu5.getValue().toString(), String.valueOf(prodConsulta.get(4).getPrecioProducto()), String.valueOf(total)};
             tomaOrden.add(variable);
         }
 
         if(!(vRegOrd.spMenu6.getValue().toString()).equals("0")){
-             String[] variable = {vRegOrd.lbMesa.getText(), vRegOrd.lbMenu6.getText(),  vRegOrd.spMenu6.getValue().toString()};
+             float total = Integer.valueOf(vRegOrd.spMenu6.getValue().toString()) * prodConsulta.get(5).getPrecioProducto();
+            String[] variable = {String.valueOf(prodConsulta.get(5).getIdProducto()) , vRegOrd.lbMenu6.getText(),  vRegOrd.spMenu6.getValue().toString(), String.valueOf(prodConsulta.get(5).getPrecioProducto()), String.valueOf(total)};
             tomaOrden.add(variable);
         }
 
         if(!(vRegOrd.spMenu7.getValue().toString()).equals("0")){
-             String[] variable = {vRegOrd.lbMesa.getText(), vRegOrd.lbMenu7.getText(),  vRegOrd.spMenu7.getValue().toString()};
+             float total = Integer.valueOf(vRegOrd.spMenu7.getValue().toString()) * prodConsulta.get(6).getPrecioProducto();
+            String[] variable = {String.valueOf(prodConsulta.get(6).getIdProducto()) , vRegOrd.lbMenu7.getText(),  vRegOrd.spMenu7.getValue().toString(), String.valueOf(prodConsulta.get(6).getPrecioProducto()), String.valueOf(total)};
             tomaOrden.add(variable);
         }
         if(!(vRegOrd.spMenu8.getValue().toString()).equals("0")){
-             String[] variable = {vRegOrd.lbMesa.getText(), vRegOrd.lbMenu8.getText(),  vRegOrd.spMenu8.getValue().toString()};
+             float total = Integer.valueOf(vRegOrd.spMenu8.getValue().toString()) * prodConsulta.get(7).getPrecioProducto();
+            String[] variable = {String.valueOf(prodConsulta.get(7).getIdProducto()) , vRegOrd.lbMenu8.getText(),  vRegOrd.spMenu8.getValue().toString(), String.valueOf(prodConsulta.get(7).getPrecioProducto()), String.valueOf(total)};
             tomaOrden.add(variable);
         }
         
@@ -122,6 +163,7 @@ public class ControladorRegistroOrden implements ActionListener, WindowListener 
         vRegOrd.spMenu7.setValue(0);
         vRegOrd.spMenu8.setValue(0);
     }
+          
     
     private void cerrarMesa(int i) {
         ArrayList<RegistroOrdenVO> regOrdConsulta = new ArrayList<>();
@@ -133,91 +175,113 @@ public class ControladorRegistroOrden implements ActionListener, WindowListener 
 //        System.out.println(rovo.getFkIdOrden());
         
         rovo.setFecha(vRegOrd.lbFecha.getText());
-        rovo.setEstado_orden("libre");
+        
+        if (i == 1) {
+            rovo.setEstado_orden("servida");
+        }
+        if (i == 2){
+            rovo.setEstado_orden("libre");
+        }
+        
         rovo.setFkIdOrden(Integer.parseInt(vRegOrd.txtNumOrden.getText()));
 
-
         if (this.rodao.insertar(rovo)== true) {
-            System.out.println("datos registrados correctamente");
+            vRegOrd.jopInfo.showMessageDialog(vRegOrd, "Datos registrados correctamente");
         }
         else{
             System.err.println("PROBLEMA AL INSERTAR");;
         }
 //        }
 
-        
+    }
+    
+    
+    private void insertarTomaDatos(){
 
+          //ORDEN
+        ovo.setNumMesa(Integer.valueOf(vRegOrd.lbMesa.getText()));
+        ovo.setSubTotal(totalOrden);
+        ovo.setFkIdUsuario(2);                //PENDIENTE DE OBTENER
+        ovo.setFkIdRestaurante(1);          //PENDIENTE DE OBTENER
+        ovo.setFkIdCliente(1);                // PENDIENTE: COMO SE OBTENDRA, SI LA FACTURA ES DESPUES?
+        if (this.odao.insertar(ovo)== true) {
+              
+               // REGISTRO ORDENES
+        rovo.setFecha(vRegOrd.lbFecha.getText());
+        rovo.setEstado_orden("orden");
+        rovo.setFkIdOrden(Integer.parseInt(vRegOrd.txtNumOrden.getText()));
+
+
+            if (this.rodao.insertar(rovo)== true) {
+                 
+                 //DETALLE ORDEN
+                    for(String[] valorPedido : leerDatos()){
+                        // dovo = cantidad, sub Total, no orden, id de producto  
+                        dovo.setCantidad(Integer.valueOf(valorPedido[2]));
+                        dovo.setSubTotal(Double.valueOf(valorPedido[4]));
+                        dovo.setFkIDOrden(Integer.valueOf(vRegOrd.txtNumOrden.getText()));
+                        dovo.setFkIdProducto(Integer.valueOf(valorPedido[0]));
+                     
+                        if (this.dodao.insertar(dovo) == false) {
+                            vRegOrd.jopInfo.showMessageDialog(vRegOrd, "ERROR DETALLE ORDEN");
+                    } else {
+                        System.err.println("todo bien");;
+                    }
+                }
+
+            }
+            else{
+                System.err.println("PROBLEMA AL INSERTAR REGISTRO ORDEN");;
+            }
+            //---
+            }
+        else{
+            System.err.println("PROBLEMA AL INSERTAR ORDEN");;
+        }
+        
+        
         
     }
-          
+     
     
     
-      
-      
-          private void ingresarPedido(int x) {
-              
-              
-//                    this.vRegOrd.lbUsuario.setText(usuario);
-//                    this.vRegOrd.lbMesa.setText(String.valueOf(x));
-//                    this.vRegOrd.lbFecha.setText(extra.fechaHoy());
-//                    this.vRegOrd.lbEstadoMesa.setText(this.estadoMesa[x]);
-//                    
-//            if(estadoMesa[x].equals("libre")){
-//                    this.vRegOrd.setVisible(true);
-//                    System.out.println(this.numeroOrden[x]);
-//                    //Nueva Orden
-//                    Integer nuevaOrden = this.numeroOrden[x] +1;                    
-//                    this.vRegOrd.txtNumOrden.setText(String.valueOf(nuevaOrden));
-//                    this.vRegOrd.setLocationRelativeTo(vMesa);
-//                //  this.vRegOrd.lbMenu1.setText("PRUEBA");
-//                //    this.vRegOrd.txtDetalle.append("HDLJASLFJALJADSLFAD;DKFAJALKJADS;LF \n");
-//                    
-//                
-//            }else{
-//                    this.vRegOrd.setVisible(true);
-//                    this.vRegOrd.setLocationRelativeTo(vMesa);                    
-//                    
-//                   // vRegOrd.txtDetalle.append(String.valueOf());
-//                    for(OrdenVO ovo: ordenDAO.consultar(numeroOrden[x])){
-//                        vRegOrd.txtNumOrden.setText(String.valueOf(ovo.getIdOrden()));
-//                        //System.out.println(ovo.getJoinIdRegistro());
-//                        vRegOrd.lbMesa.setText(String.valueOf(ovo.getNumMesa()));
-//                        vRegOrd.txtDetalle.append("MONTO TOTAL: " + String.valueOf(ovo.getSubTotal()) + " \n");
-//                    }
-//                    
-//                    for(DetalleOrdenVO dovo : dodao.consultar(numeroOrden[2])){
-//                        
-//                        // vRegOrd.txtDetalle.append( "ORDEN: " + String.valueOf(dovo.getFkIDOrden())+ "\n");
-//                        vRegOrd.txtDetalle.append(String.valueOf(dovo.getCantidad())+ " DE: ");
-//                        vRegOrd.txtDetalle.append(String.valueOf(dovo.getFkIdProducto())+ " SUBTOTAL: ");
-//                        vRegOrd.txtDetalle.append(String.valueOf(dovo.getSubTotal()) + "\n");  ///POSIBLE ERROR
-//                    
-//                    }
-//                
-//            }
-    }
-      
-      
-          
+             
     @Override
     public void actionPerformed(ActionEvent e) {
         
         
         if (e.getSource().equals(vRegOrd.btnAceptar)){
+            
+            
             //ESCRIBIR DATOS A CAJA TEXTO
+            // variable = cantidad,  nombre,  precio unitario, sub Total.
                 vRegOrd.txtDetalle.setText("");
                 for(String[] valorPedido : leerDatos()){
-                vRegOrd.txtDetalle.append("#" +valorPedido[2] + ". " + valorPedido[1] + " Para la Mesa: " + valorPedido[0] +"\n");
-            
+                vRegOrd.txtDetalle.append(valorPedido[2] + "). " + valorPedido[1] + ".  " + " Q" + valorPedido[3] + "      SubTotal: " + valorPedido[4] + "\n");
+                totalOrden += Double.valueOf(valorPedido[4]);
             }
+                
+                insertarTomaDatos();
             
-            
+             
         }
         
         if (e.getSource().equals(vRegOrd.btnCancelar)){
             vRegOrd.dispose();
             limpiar();
         }
+        
+        if (e.getSource().equals(vRegOrd.btnServido)){
+            if ((vRegOrd.lbEstadoMesa.getText().equals("orden"))) {
+                cerrarMesa(1);
+                vRegOrd.jopInfo.showMessageDialog(vRegOrd, "Mesa Servida");
+             }else{
+                 vRegOrd.jopInfo.showMessageDialog(vRegOrd, "La mesa no tiene Orden");
+             }
+            limpiar();
+        }
+        
+        
         
          if (e.getSource().equals(vRegOrd.btnFacturar)){
              fFa.lblFacutraOrden.setText(vRegOrd.txtNumOrden.getText());
@@ -227,19 +291,42 @@ public class ControladorRegistroOrden implements ActionListener, WindowListener 
         }
          
          if (e.getSource().equals(vRegOrd.btnCerrarMesa)){
-             
-            cerrarMesa(1);
-            
+             if (!(vRegOrd.lbEstadoMesa.getText().equals("libre"))) {
+                cerrarMesa(2);
+                vRegOrd.jopInfo.showMessageDialog(vRegOrd, "Mesa cerrada");
+             }else{
+                 vRegOrd.jopInfo.showMessageDialog(vRegOrd, "La mesa No debe estar libre para cerrar la Mesa");
+             }   
         }
-        
-        
-        
     }
 
     
       
     @Override
     public void windowOpened(WindowEvent e) {
+       consultarProducto();
+       
+//       // pureba desde aca
+//        if (vRegOrd.lbEstadoMesa.getText().equals("orden") || vRegOrd.lbEstadoMesa.getText().equals("servida") || vRegOrd.lbEstadoMesa.getText().equals("facturada")) {
+//                                for(OrdenVO ovo: odao.consultar(Integer.valueOf(vRegOrd.txtNumOrden.getText()))){
+//                                    vRegOrd.txtNumOrden.setText(String.valueOf(ovo.getIdOrden()));
+//                                            //System.out.println(ovo.getJoinIdRegistro());
+//                                    vRegOrd.lbMesa.setText(String.valueOf(ovo.getNumMesa()));
+//                                    vRegOrd.txtDetalle.append("MONTO TOTAL: " + String.valueOf(ovo.getSubTotal()) + " \n");
+//                                }
+//                                
+//                                //detalle orden
+//                                for(DetalleOrdenVO dovo : dodao.consultar(Integer.valueOf(vRegOrd.txtNumOrden.getText()))){
+//
+//                                    // vRegOrd.txtDetalle.append( "ORDEN: " + String.valueOf(dovo.getFkIDOrden())+ "\n");
+//                                    vRegOrd.txtDetalle.append(String.valueOf(dovo.getCantidad())+ " DE: ");
+//
+//                                    vRegOrd.txtDetalle.append(pdao.consultaExactaP(pvo).get(0).getNombreProducto());/// nombre producto
+//
+//                                    vRegOrd.txtDetalle.append(" SUBTOTAL: " +String.valueOf(dovo.getSubTotal()) + "\n");
+//
+//                                }
+//        }
        
     }
 
@@ -275,12 +362,4 @@ public class ControladorRegistroOrden implements ActionListener, WindowListener 
        
     }
 
-    
-
-  
-    
-    
-    
-    
-    
 }

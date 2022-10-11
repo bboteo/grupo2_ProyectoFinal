@@ -32,7 +32,7 @@ public class FrmMesas extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        txtTimeM2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -53,6 +53,15 @@ public class FrmMesas extends javax.swing.JFrame {
         txtNumOrden = new javax.swing.JLabel();
         lbNumOrden1 = new javax.swing.JLabel();
         btnActualizar = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        txtTimeM1 = new javax.swing.JLabel();
+        txtTimeM3 = new javax.swing.JLabel();
+        txtTimeM4 = new javax.swing.JLabel();
+        txtTimeM5 = new javax.swing.JLabel();
+        txtTimeM6 = new javax.swing.JLabel();
+        txtTimeM7 = new javax.swing.JLabel();
+        txtTimeM8 = new javax.swing.JLabel();
+        txtTimeM9 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jfTomaLayout = new javax.swing.GroupLayout(jfToma.getContentPane());
         jfToma.getContentPane().setLayout(jfTomaLayout);
@@ -74,31 +83,31 @@ public class FrmMesas extends javax.swing.JFrame {
         jlbFecha.setText("Fecha");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel1.setText("4");
+        jLabel1.setText("#4  T:");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel2.setText("5");
+        jLabel2.setText("#5  T:");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel3.setText("6");
+        jLabel3.setText("#6  T:");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel4.setText("1");
+        txtTimeM2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtTimeM2.setText("00:00:00");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel5.setText("2");
+        jLabel5.setText("#2  T:");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel6.setText("3");
+        jLabel6.setText("#3  T:");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel7.setText("7");
+        jLabel7.setText("#7  T:");
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel8.setText("8");
+        jLabel8.setText("#8  T:");
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel9.setText("9");
+        jLabel9.setText("#9  T:");
 
         btnMesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/ic_mesa_gris200.png"))); // NOI18N
         btnMesa3.addActionListener(new java.awt.event.ActionListener() {
@@ -166,69 +175,105 @@ public class FrmMesas extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel10.setText("ESTADO MESAS");
 
-        txtNumOrden.setText("20");
+        txtNumOrden.setText("0");
 
-        lbNumOrden1.setText("No Orden:");
+        lbNumOrden1.setText("0");
 
         btnActualizar.setText("ACTUALIZAR");
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel11.setText("#1  T:");
+
+        txtTimeM1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtTimeM1.setText("00:00:00");
+
+        txtTimeM3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtTimeM3.setText("00:00:00");
+
+        txtTimeM4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtTimeM4.setText("00:00:00");
+
+        txtTimeM5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtTimeM5.setText("00:00:00");
+
+        txtTimeM6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtTimeM6.setText("00:00:00");
+
+        txtTimeM7.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtTimeM7.setText("00:00:00");
+
+        txtTimeM8.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtTimeM8.setText("00:00:00");
+
+        txtTimeM9.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtTimeM9.setText("00:00:00");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel10)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(btnMesa1)
+                                    .addGap(27, 27, 27)
+                                    .addComponent(btnMesa2))))
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnMesa3)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtTimeM3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(jLabel1)
-                        .addGap(217, 217, 217)
-                        .addComponent(jLabel2)
-                        .addGap(214, 214, 214)
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(btnMesa4)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtTimeM4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnMesa4))
                         .addGap(27, 27, 27)
                         .addComponent(btnMesa5)
                         .addGap(29, 29, 29)
                         .addComponent(btnMesa6))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtTimeM5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(41, 41, 41)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28)
+                                .addComponent(txtTimeM6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addComponent(jLabel7)
-                        .addGap(220, 220, 220)
-                        .addComponent(jLabel8)
-                        .addGap(217, 217, 217)
-                        .addComponent(jLabel9))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
                         .addComponent(btnMesa7)
                         .addGap(27, 27, 27)
                         .addComponent(btnMesa8)
                         .addGap(29, 29, 29)
                         .addComponent(btnMesa9))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnMesa1))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(27, 27, 27)
-                                .addComponent(btnMesa2)
-                                .addGap(29, 29, 29)
-                                .addComponent(btnMesa3))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(129, 129, 129)
-                                .addComponent(jLabel5)
-                                .addGap(212, 212, 212)
-                                .addComponent(jLabel6)))))
-                .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtTimeM7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel8)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtTimeM8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(58, 58, 58)
+                        .addComponent(jLabel9)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtTimeM9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 46, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(62, 62, 62)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -236,18 +281,24 @@ public class FrmMesas extends javax.swing.JFrame {
                         .addComponent(lbNumOrden1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(txtNumOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel10)
-                        .addGap(258, 258, 258))
+                        .addGap(258, 582, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jlbNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jlbFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21))))
+                        .addGap(21, 21, 21))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(94, 94, 94)
+                        .addComponent(txtTimeM1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtTimeM2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(281, 281, 281))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnActualizar)
-                .addGap(303, 303, 303))
+                .addGap(323, 323, 323))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -261,16 +312,16 @@ public class FrmMesas extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlbNombre)
                     .addComponent(jlbFecha))
-                .addGap(1, 1, 1)
+                .addGap(3, 3, 3)
                 .addComponent(btnActualizar)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel11)
                     .addComponent(jLabel6)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4))))
+                    .addComponent(txtTimeM2)
+                    .addComponent(txtTimeM1)
+                    .addComponent(txtTimeM3))
                 .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnMesa1)
@@ -278,14 +329,14 @@ public class FrmMesas extends javax.swing.JFrame {
                     .addComponent(btnMesa3))
                 .addGap(28, 28, 28)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(13, 13, 13)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1)
                     .addComponent(jLabel3)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))))
+                    .addComponent(txtTimeM4)
+                    .addComponent(txtTimeM5)
+                    .addComponent(txtTimeM6))
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnMesa4)
@@ -293,19 +344,20 @@ public class FrmMesas extends javax.swing.JFrame {
                     .addComponent(btnMesa6))
                 .addGap(37, 37, 37)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel7)
                     .addComponent(jLabel9)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8))))
+                    .addComponent(txtTimeM7)
+                    .addComponent(txtTimeM8)
+                    .addComponent(txtTimeM9))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnMesa7)
                     .addComponent(btnMesa8)
-                    .addComponent(btnMesa9)))
+                    .addComponent(btnMesa9))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         pack();
@@ -395,9 +447,9 @@ public class FrmMesas extends javax.swing.JFrame {
     public javax.swing.JButton btnMesa9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    public javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    public javax.swing.JLabel jLabel4;
     public javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -410,5 +462,14 @@ public class FrmMesas extends javax.swing.JFrame {
     public javax.swing.JLabel jlbNombre;
     public javax.swing.JLabel lbNumOrden1;
     public javax.swing.JLabel txtNumOrden;
+    public javax.swing.JLabel txtTimeM1;
+    public javax.swing.JLabel txtTimeM2;
+    public javax.swing.JLabel txtTimeM3;
+    public javax.swing.JLabel txtTimeM4;
+    public javax.swing.JLabel txtTimeM5;
+    public javax.swing.JLabel txtTimeM6;
+    public javax.swing.JLabel txtTimeM7;
+    public javax.swing.JLabel txtTimeM8;
+    public javax.swing.JLabel txtTimeM9;
     // End of variables declaration//GEN-END:variables
 }
