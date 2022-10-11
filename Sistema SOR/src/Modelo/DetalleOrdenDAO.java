@@ -5,6 +5,7 @@
 package Modelo;
 
 import conexion.Conexion;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 /**
@@ -33,8 +34,31 @@ public class DetalleOrdenDAO implements ConsultaDetalleOrden{
     }
 
     @Override
-    public ArrayList<DetalleOrdenVO> consultar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public ArrayList<DetalleOrdenVO> consultar(int n) {
+        Conexion c = new Conexion();
+          ArrayList<DetalleOrdenVO> consultaDetalleOrden = new ArrayList<>();
+        
+        try{
+             c.conectar();
+            String query = 
+                    "SELECT id_detalle, cantidad, sub_total, FK_id_orden, FK_id_producto FROM dbogrupo2.Detalle_orden WHERE FK_id_orden = " + n;
+                        
+            ResultSet rs = c.consultaDatos(query);
+            while(rs.next()){
+                DetalleOrdenVO dovo = new DetalleOrdenVO();
+                dovo.setIdDetall(rs.getInt(1));
+                dovo.setCantidad(rs.getInt(2));
+                dovo.setSubTotal(rs.getDouble(3));
+                dovo.setFkIDOrden(rs.getInt(4));
+                dovo.setFkIdProducto(rs.getInt(5));
+                consultaDetalleOrden.add(dovo);
+            }
+            c.desconectar();
+             } catch (Exception e) {
+             System.err.println("Error[MMostrar]: " + e.getMessage());
+            c.desconectar();
+        }
+              return consultaDetalleOrden;
     }
 
     @Override

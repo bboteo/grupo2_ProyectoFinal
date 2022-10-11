@@ -67,12 +67,15 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
         lbUsuario1 = new javax.swing.JLabel();
         btnFacturar = new javax.swing.JButton();
         btnCerrarMesa = new javax.swing.JButton();
+        txtNumOrden = new javax.swing.JLabel();
+        lbNumOrden = new javax.swing.JLabel();
+        lbEstadoMesa = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jpTomaOrd.setPreferredSize(new java.awt.Dimension(807, 1080));
 
-        lbFecha.setText("22");
+        lbFecha.setText("0");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setText("TOMA DE ORDEN");
@@ -96,55 +99,62 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
         lbMenu1.setText("Hamburguesa");
 
         lbMenu2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbMenu2.setText("Hamburguesa");
+        lbMenu2.setText("Pollo Frito");
 
         lbMenu4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbMenu4.setText("Hamburguesa");
+        lbMenu4.setText("Gaseosa");
 
         lbMenu3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbMenu3.setText("Hamburguesa");
+        lbMenu3.setText("Pizza");
 
         spMenu1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        spMenu1.setModel(new javax.swing.SpinnerNumberModel(1, 0, null, 1));
+        spMenu1.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
         spMenu2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        spMenu2.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
         spMenu3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        spMenu3.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
         spMenu4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        spMenu4.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/ic_hamburguer150.png"))); // NOI18N
         jLabel12.setText("jLabel3");
         jLabel12.setPreferredSize(new java.awt.Dimension(150, 100));
 
         lbMenu5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbMenu5.setText("Hamburguesa");
+        lbMenu5.setText("Shuco");
 
         spMenu5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        spMenu5.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/ic_pizza150.png"))); // NOI18N
         jLabel14.setText("jLabel3");
 
         lbMenu6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbMenu6.setText("Hamburguesa");
+        lbMenu6.setText("Mixta");
 
         spMenu6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        spMenu6.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/ic_pollofrito150.jpg"))); // NOI18N
         jLabel16.setText("jLabel3");
 
         lbMenu7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbMenu7.setText("Hamburguesa");
+        lbMenu7.setText("Churrasco");
 
         spMenu7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        spMenu7.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/ic_hamburguer150.png"))); // NOI18N
         jLabel18.setText("jLabel3");
 
         lbMenu8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbMenu8.setText("Hamburguesa");
+        lbMenu8.setText("Papas Fritas");
 
         spMenu8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        spMenu8.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -276,11 +286,11 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
         txtDetalle.setRows(5);
         jScrollPane1.setViewportView(txtDetalle);
 
-        jLabel8.setText("DETALLE DE COMPRA");
+        jLabel8.setText("DETALLE DE ORDEN");
 
-        lbMesa.setText("MESA");
+        lbMesa.setText("m");
 
-        lbUsuario.setText("NOMBRE");
+        lbUsuario.setText("n");
 
         lbMesa1.setText("MESA");
 
@@ -302,64 +312,80 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
             }
         });
 
+        txtNumOrden.setText("0");
+
+        lbNumOrden.setText("No Orden:");
+
+        lbEstadoMesa.setText("MESA");
+
         javax.swing.GroupLayout jpTomaOrdLayout = new javax.swing.GroupLayout(jpTomaOrd);
         jpTomaOrd.setLayout(jpTomaOrdLayout);
         jpTomaOrdLayout.setHorizontalGroup(
             jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel4)
             .addGroup(jpTomaOrdLayout.createSequentialGroup()
-                .addGap(310, 310, 310)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(140, 140, 140)
-                .addComponent(lbFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jpTomaOrdLayout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(lbUsuario)
-                .addGap(21, 21, 21)
-                .addComponent(lbUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jpTomaOrdLayout.createSequentialGroup()
-                .addGap(6, 6, 6)
                 .addGroup(jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
                     .addGroup(jpTomaOrdLayout.createSequentialGroup()
-                        .addGap(134, 134, 134)
-                        .addComponent(lbMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(78, 78, 78)
+                        .addComponent(lbNumOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtNumOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(96, 96, 96)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(140, 140, 140)
+                        .addComponent(lbFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpTomaOrdLayout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(lbMesa1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addGroup(jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCancelar)))
-            .addGroup(jpTomaOrdLayout.createSequentialGroup()
-                .addGap(290, 290, 290)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jpTomaOrdLayout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addGroup(jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnFacturar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCerrarMesa, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)))
+                        .addGap(6, 6, 6)
+                        .addGroup(jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jpTomaOrdLayout.createSequentialGroup()
+                                .addGap(64, 64, 64)
+                                .addGroup(jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lbMesa1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jpTomaOrdLayout.createSequentialGroup()
+                                        .addComponent(lbMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(lbEstadoMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(12, 12, 12)
+                        .addGroup(jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jpTomaOrdLayout.createSequentialGroup()
+                        .addGap(290, 290, 290)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpTomaOrdLayout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42)
+                        .addGroup(jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnFacturar, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
+                            .addComponent(btnCerrarMesa, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE))))
+                .addGap(47, 47, 47))
         );
         jpTomaOrdLayout.setVerticalGroup(
             jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpTomaOrdLayout.createSequentialGroup()
                 .addComponent(jLabel4)
                 .addGap(4, 4, 4)
-                .addGroup(jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jpTomaOrdLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(lbFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(5, 5, 5)
-                .addGroup(jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtNumOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbNumOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(5, 5, 5)
                 .addGroup(jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbMesa1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lbMesa1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lbMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lbEstadoMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpTomaOrdLayout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -469,6 +495,7 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel jpTomaOrd;
+    public javax.swing.JLabel lbEstadoMesa;
     public javax.swing.JLabel lbFecha;
     public javax.swing.JLabel lbMenu1;
     public javax.swing.JLabel lbMenu2;
@@ -480,6 +507,7 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
     public javax.swing.JLabel lbMenu8;
     public javax.swing.JLabel lbMesa;
     public javax.swing.JLabel lbMesa1;
+    public javax.swing.JLabel lbNumOrden;
     public javax.swing.JLabel lbUsuario;
     public javax.swing.JLabel lbUsuario1;
     public javax.swing.JSpinner spMenu1;
@@ -491,5 +519,6 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
     public javax.swing.JSpinner spMenu7;
     public javax.swing.JSpinner spMenu8;
     public javax.swing.JTextArea txtDetalle;
+    public javax.swing.JLabel txtNumOrden;
     // End of variables declaration//GEN-END:variables
 }

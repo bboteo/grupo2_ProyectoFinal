@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public interface ConsultaDetalleOrden {
     
      public boolean insertar (DetalleOrdenVO dovo);
-    public ArrayList<DetalleOrdenVO> consultar();
+    public ArrayList<DetalleOrdenVO> consultar(int n);
     public void eliminiar (int detOrden);
     public ArrayList<DetalleOrdenVO> actualizar(DetalleOrdenVO dovo);
     
