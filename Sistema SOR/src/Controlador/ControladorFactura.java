@@ -6,6 +6,11 @@ package Controlador;
 
 import Modelo.ClienteDAO;
 import Modelo.ClienteVO;
+import Modelo.DetalleOrdenDAO;
+import Modelo.DetalleOrdenVO;
+import Modelo.OrdenDAO;
+import Modelo.OrdenVO;
+import Modelo.Reporte;
 import Vista.FrmFactura;
 import Vista.FrmRegistroOrden;
 import java.awt.event.ActionEvent;
@@ -23,18 +28,30 @@ public class ControladorFactura implements ActionListener, WindowListener{
     FrmFactura vFa = new FrmFactura();
     ClienteDAO cdao = new ClienteDAO();
     ClienteVO cvo = new ClienteVO();
+    OrdenDAO odao = new OrdenDAO();
+    OrdenVO ovo = new OrdenVO();
+    DetalleOrdenDAO ddao = new DetalleOrdenDAO();
+    DetalleOrdenVO dvo = new DetalleOrdenVO();
+    Reporte rep = new Reporte();
     //Para validar si el cliente es nuevo
     private boolean clienteNuevo = false;
+    private String nitFactura = "";
     //JP
     FrmRegistroOrden vRo = new FrmRegistroOrden();
     
     
     public ControladorFactura(FrmFactura vFa, ClienteDAO cdao, ClienteVO cvo,
-            FrmRegistroOrden vRo) {
+            FrmRegistroOrden vRo,OrdenDAO odao, OrdenVO ovo, DetalleOrdenDAO ddao, DetalleOrdenVO dvo,  
+            Reporte rep) {
         this.vFa = vFa;
         this.cdao = cdao;
         this.cvo = cvo;
         this.vRo = vRo;
+        this.odao = odao;
+        this.ovo = ovo;
+        this.ddao = ddao;
+        this.dvo = dvo;
+        this.rep = rep;
         
         vFa.btnFacturaBuscar.addActionListener(this);
         vFa.btnFacturaCf.addActionListener(this);
@@ -53,13 +70,14 @@ public class ControladorFactura implements ActionListener, WindowListener{
         vFa.txtFacturaTelefono.setText("");
         vFa.txtFacturaTelefono.setEditable(false);
         clienteNuevo = false;
-       
+        nitFactura = "";
+       vFa.lblFacutraOrden.setText("18");
     }
     
     private boolean buscarcliente(){
         ArrayList<ClienteVO> info = new ArrayList<>();
                 
-        info = cdao.consultarC(cvo);
+        info = cdao.consultarCxNit(cvo);
         if(info.isEmpty()){
             //El cliente es nuevo
             clienteNuevo = true;
@@ -84,8 +102,62 @@ public class ControladorFactura implements ActionListener, WindowListener{
         return cdao.insertarC(cvo);
     }
     
-    private void reporte(){
-        System.out.println("Estoy haciendo el reporte");
+    private Double totalFactura(){
+        Double total = 0.0;
+        ArrayList<DetalleOrdenVO> info = new ArrayList<>();
+        info = ddao.consultar(Integer.parseInt(vFa.lblFacutraOrden.getText().toString()));
+        //int i = info.size();
+        for(int i=0; i<info.size(); i++){
+            total = total + info.get(i).getSubTotal();
+        }
+        return total;
+    }
+    
+    private boolean agregarClienteOrden(){
+        ArrayList<ClienteVO> info = new ArrayList<>();
+        cvo.setNitCliente(nitFactura);
+        info = cdao.consultarCxNit(cvo);
+        ovo.setFkIdCliente(info.get(0).getIdCliente());
+        ovo.setIdOrden(Integer.parseInt(vFa.lblFacutraOrden.getText().toString()));
+        ovo.setSubTotal(totalFactura());
+        odao.actualizarXfac(ovo);
+        return true;
+    }
+    
+    private void factura(){
+        ovo.setIdOrden(Integer.parseInt(vFa.lblFacutraOrden.getText().toString()));
+        rep.reporteFactura(ovo);
+        rep.jv.setDefaultCloseOperation(vFa.DISPOSE_ON_CLOSE);
+        rep.jv.setVisible(true);
+    }
+    
+    private void prepararFactura(){
+        if(clienteNuevo){ //Si el cliente es nuevo
+            if(vFa.txtFacturaNit.getText().isEmpty()||
+                vFa.txtFacturaNombre.getText().isEmpty()){
+                vFa.jopFactura.showMessageDialog(vFa, "Debe ingresar como minimo el NIT y Nombre");
+            }else{
+                if(ingresarcliente()){
+                    if(nitFactura.equals(vFa.txtFacturaNit.getText().toString())){
+                        //buscar el id del cliente
+                        agregarClienteOrden();                        
+                        factura();
+                    }else{
+                        vFa.jopFactura.showMessageDialog(vFa, "Debe buscar nuevamente");
+                    }
+                }else{
+                    //Error al ingresar al cliente
+                    vFa.jopFactura.showMessageDialog(vFa, "Error al ingresar al cliente");
+                }
+            }                        
+        }else{ //Si el cliente YA existe
+            if(nitFactura.equals(vFa.txtFacturaNit.getText().toString())){
+                agregarClienteOrden();
+                factura();
+            }else{
+                vFa.jopFactura.showMessageDialog(vFa, "Debe buscar nuevamente");
+            }
+        }
     }
     
     @Override
@@ -110,6 +182,7 @@ public class ControladorFactura implements ActionListener, WindowListener{
                     vFa.txtFacturaApellido.setEditable(false);
                     vFa.txtFacturaTelefono.setEditable(false); 
                 }
+                nitFactura = vFa.txtFacturaNit.getText().toString();
             }
             else{
                 //Debo poner un nit
@@ -117,30 +190,14 @@ public class ControladorFactura implements ActionListener, WindowListener{
             }
         }
         if(e.getSource()==vFa.btnFacturaFactura){
-            if(clienteNuevo){
-                //Validar que todas las casillas esten llenas
-                if(vFa.txtFacturaNit.getText().isEmpty()||
-                        vFa.txtFacturaNombre.getText().isEmpty()){
-                    vFa.jopFactura.showMessageDialog(vFa, "Debe ingresar como minimo el NIT y Nombre");
-                }else{
-                    if(ingresarcliente()){
-                        //Hacer reporte
-                        reporte();
-                    }else{
-                        //Error al ingresar al cliente
-                        vFa.jopFactura.showMessageDialog(vFa, "Error al ingresar al cliente");
-                    }
-                }                        
-            }else{
-                //Hacer Reporte
-                reporte();
-            }
+            prepararFactura();
         }
         if(e.getSource()==vFa.btnFacturaCf){
             //Seleccionar al id=1 de la base de datos Cliente
             cvo.setNitCliente("CF");
             vFa.txtFacturaNit.setText("CF");
             buscarcliente();
+            nitFactura = vFa.txtFacturaNit.getText().toString();
         }
         if(e.getSource()==vFa.btnFacturaCancelar){
             vFa.dispose();
