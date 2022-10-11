@@ -10,6 +10,8 @@ import Modelo.DetalleOrdenVO;
 import Modelo.Extras;
 import Modelo.OrdenDAO;
 import Modelo.OrdenVO;
+import Modelo.ProductoDAO;
+import Modelo.ProductoVO;
 import Vista.FrmMesas;
 import Vista.FrmRegistroOrden;
 import java.awt.Color;
@@ -28,6 +30,7 @@ public class ControladorOrden implements ActionListener, WindowListener{
     OrdenVO ordenVO = new OrdenVO();
     Extras extra = new Extras();
     
+    // DETALLE ORDEN
     DetalleOrdenDAO dodao = new DetalleOrdenDAO();
     DetalleOrdenVO doVO = new DetalleOrdenVO();
     
@@ -37,13 +40,14 @@ public class ControladorOrden implements ActionListener, WindowListener{
     Integer[] numeroOrden = new Integer[10];
     String usuario;
     
-    //TIMER
-//    int hor = 0;
-//    int min = 0;
-//    int seg = 0;
-//    
-//    int segM1 = 0;
+    // PRODUCTO
+    ProductoDAO pdao = new ProductoDAO();
+    ProductoVO pvo = new ProductoVO();
     
+    //TIMER
+    Integer[] tM1 = {0,0,0}, tM2 = {0,0,0}, tM3 = {0,0,0}, tM4 = {0,0,0};
+    Integer[] tM5 = {0,0,0}, tM6 = {0,0,0}, tM7 = {0,0,0}, tM8 = {0,0,0}, tM9 = {0,0,0};
+ 
 
     public ControladorOrden(FrmMesas vMesa, OrdenDAO ordenDAO, OrdenVO ordenVO, FrmRegistroOrden vRegOrd) {
         this.vMesa = vMesa;
@@ -66,29 +70,122 @@ public class ControladorOrden implements ActionListener, WindowListener{
         vMesa.addWindowListener(this);
         
     }
-
-    //TIMER
-//    Timer timerM1 = new Timer(1000, new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                ++seg;
-//                if((seg != 0)&&(seg%60 == 0)){
-//                    ++min;
-//                    seg = 0;
-//                    if(min%60 == 0){
-//                        min=0;
-//                        ++hor;
-//                        if(hor%60 == 0){
-//                            hor = 0;
-//                        }
-//                    }
-//                }
-//                
-//                vMesa.jLabel4.setText((hor<10? ("0"+hor):(hor))+ ":"+(min<10? ("0"+min):(min))+ ":"+ (seg<10 ? ("0"+ seg): (seg)) ); 
-//                
-//            }
-//    });
+  
     
+    public Integer[] cronometro(Integer hor, Integer min, Integer seg){
+        Integer timeCronometro[] = new Integer[3];
+        
+                        seg +=1;
+                if((seg != 0)&&(seg%60 == 0)){
+                    ++min;
+                    seg = 0;
+                    if(min%60 == 0){
+                        min=0;
+                        ++hor;
+                        if(hor%60 == 0){
+                            hor = 0;
+                        }
+                    }
+                }
+                timeCronometro[0] = seg;
+                timeCronometro[1] = min;
+                timeCronometro[2] = hor;
+                
+                
+        return timeCronometro;
+    }
+        
+            Timer timerM1 = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                if(estadoMesa[1].equals("orden")){
+                    tM1 = cronometro(tM1[2], tM1[1], tM1[0]);
+                    
+                }else{
+                    tM1[0] = 0;
+                    tM1[1] = 0;
+                    tM1[2] = 0;
+                }
+                if(estadoMesa[2].equals("orden") ){
+                    tM2 = cronometro(tM2[2], tM2[1], tM2[0]);
+                } else {
+                    tM2[0] = 0;
+                    tM2[1] = 0;
+                    tM2[2] = 0;
+                }
+                
+                if(estadoMesa[3].equals("orden")){
+                    tM3 = cronometro(tM3[2], tM3[1], tM3[0]);
+                } else {
+                    tM3[0] = 0;
+                    tM3[1] = 0;
+                    tM3[2] = 0;
+                }
+                
+                if(estadoMesa[4].equals("orden")){
+                    tM4 = cronometro(tM4[2], tM4[1], tM4[0]);
+
+                } else {
+                    tM4[0] = 0;
+                    tM4[1] = 0;
+                    tM4[2] = 0;
+                }
+                
+                if(estadoMesa[5].equals("orden")){
+                    tM5 = cronometro(tM5[2], tM5[1], tM5[0]);
+                } else {
+                    tM5[0] = 0;
+                    tM5[1] = 0;
+                    tM5[2] = 0;
+                }
+                
+                if(estadoMesa[6].equals("orden")){
+                    tM6 = cronometro(tM6[2], tM6[1], tM6[0]);
+                } else {
+                    tM6[0] = 0;
+                    tM6[1] = 0;
+                    tM6[2] = 0;
+                }
+                
+                if(estadoMesa[7].equals("orden")){
+                    tM7 = cronometro(tM7[2], tM7[1], tM7[0]);
+                } else {
+                    tM7[0] = 0;
+                    tM7[1] = 0;
+                    tM7[2] = 0;
+                }
+                
+                if(estadoMesa[8].equals("orden")){
+                    tM8 = cronometro(tM8[2], tM8[1], tM8[0]);
+                } else {
+                    tM8[0] = 0;
+                    tM8[1] = 0;
+                    tM8[2] = 0;
+                }
+                
+                if(estadoMesa[9].equals("orden")){
+                    tM9 = cronometro(tM9[2], tM9[1], tM9[0]);
+                } else {
+                    tM9[0] = 0;
+                    tM9[1] = 0;
+                    tM9[2] = 0;
+                }
+
+                vMesa.txtTimeM1.setText((tM1[2]<10? ("0"+tM1[2]):(tM1[2]))+ ":"+(tM1[1]<10? ("0"+tM1[1]):(tM1[1]))+ ":"+ (tM1[0]<10 ? ("0"+ tM1[0]): (tM1[0])) );
+                vMesa.txtTimeM2.setText((tM2[2]<10? ("0"+tM2[2]):(tM2[2]))+ ":"+(tM2[1]<10? ("0"+tM2[1]):(tM2[1]))+ ":"+ (tM2[0]<10 ? ("0"+ tM2[0]): (tM2[0])) );
+                vMesa.txtTimeM3.setText((tM3[2]<10? ("0"+tM3[2]):(tM3[2]))+ ":"+(tM3[1]<10? ("0"+tM3[1]):(tM3[1]))+ ":"+ (tM3[0]<10 ? ("0"+ tM3[0]): (tM3[0])) );
+                vMesa.txtTimeM4.setText((tM4[2]<10? ("0"+tM4[2]):(tM4[2]))+ ":"+(tM4[1]<10? ("0"+tM4[1]):(tM4[1]))+ ":"+ (tM4[0]<10 ? ("0"+ tM4[0]): (tM4[0])) );
+                vMesa.txtTimeM5.setText((tM5[2]<10? ("0"+tM5[2]):(tM5[2]))+ ":"+(tM5[1]<10? ("0"+tM5[1]):(tM5[1]))+ ":"+ (tM5[0]<10 ? ("0"+ tM5[0]): (tM5[0])) );
+                vMesa.txtTimeM6.setText((tM6[2]<10? ("0"+tM6[2]):(tM6[2]))+ ":"+(tM6[1]<10? ("0"+tM6[1]):(tM6[1]))+ ":"+ (tM6[0]<10 ? ("0"+ tM6[0]): (tM6[0])) );
+                vMesa.txtTimeM7.setText((tM7[2]<10? ("0"+tM7[2]):(tM7[2]))+ ":"+(tM7[1]<10? ("0"+tM7[1]):(tM7[1]))+ ":"+ (tM7[0]<10 ? ("0"+ tM7[0]): (tM7[0])) );
+                vMesa.txtTimeM8.setText((tM8[2]<10? ("0"+tM8[2]):(tM8[2]))+ ":"+(tM8[1]<10? ("0"+tM8[1]):(tM8[1]))+ ":"+ (tM8[0]<10 ? ("0"+ tM8[0]): (tM8[0])) );
+                vMesa.txtTimeM9.setText((tM9[2]<10? ("0"+tM9[2]):(tM9[2]))+ ":"+(tM9[1]<10? ("0"+tM9[1]):(tM9[1]))+ ":"+ (tM9[0]<10 ? ("0"+ tM9[0]): (tM9[0])) );
+                
+            }
+
+    });
+
     
     // TIMER ESCANEAR ORDENES
 //        Timer timerM2 = new Timer(20000, new ActionListener() {
@@ -100,7 +197,7 @@ public class ControladorOrden implements ActionListener, WindowListener{
     
     
         public void dibujarMesa(){
-            System.out.println("dibujar mesa"); //temporal
+            
             
             for(int i=1 ; i<9; i++){    
 
@@ -238,15 +335,9 @@ public class ControladorOrden implements ActionListener, WindowListener{
         }
     }
         
-        
-//        timerM1.start();
+      
 //        timerM2.start();
 
-
-
-
-
-/////////////////////
         
          private void estadoMesas(){
 
@@ -256,9 +347,7 @@ public class ControladorOrden implements ActionListener, WindowListener{
             for(OrdenVO ovo: ordenDAO.consultarJoin(i)){
                 this.estadoMesa[i] = ovo.getJoinEstadoOrden();//
                 this.numeroOrden[i] =ovo.getIdOrden();
-                
-                //System.out.println(ovo.getIdOrden());
-                
+
             }
        }
      
@@ -273,48 +362,56 @@ public class ControladorOrden implements ActionListener, WindowListener{
         
         
     private void leerPedido(int x) {
-        System.out.println("llerPedido"); //TEMPORAL
+        
                     this.vRegOrd.lbUsuario.setText(usuario);
                     this.vRegOrd.lbMesa.setText(String.valueOf(x));
                     this.vRegOrd.lbFecha.setText(extra.fechaHoy());
                     this.vRegOrd.lbEstadoMesa.setText(this.estadoMesa[x]);
                     
+                    
+                    
+                    // MESA LIBRE
+                    
             if(estadoMesa[x].equals("libre")){
                     this.vRegOrd.setVisible(true);
-                    System.out.println(this.numeroOrden[x]);
+                    
                     //Nueva Orden
-                    Integer nuevaOrden = this.numeroOrden[x] +1;                    
+                    ordenVO = ordenDAO.consultaUltimaOrd();
+                    Integer nuevaOrden = ordenVO.getIdOrden() +1;                    
                     this.vRegOrd.txtNumOrden.setText(String.valueOf(nuevaOrden));
                     this.vRegOrd.setLocationRelativeTo(vMesa);
-                //  this.vRegOrd.lbMenu1.setText("PRUEBA");
-                //    this.vRegOrd.txtDetalle.append("HDLJASLFJALJADSLFAD;DKFAJALKJADS;LF \n");
+                
                     
                 
+                // MESA CON ORDEN DE PEDIDO EN CUALQUIER ESTADO
             }else{
                     this.vRegOrd.setVisible(true);
                     this.vRegOrd.setLocationRelativeTo(vMesa);                    
                     
                    // vRegOrd.txtDetalle.append(String.valueOf());
-                    for(OrdenVO ovo: ordenDAO.consultar(numeroOrden[x])){
+                    for(OrdenVO ovo: ordenDAO.consultar(numeroOrden[x])){   // de aca
                         vRegOrd.txtNumOrden.setText(String.valueOf(ovo.getIdOrden()));
                         //System.out.println(ovo.getJoinIdRegistro());
                         vRegOrd.lbMesa.setText(String.valueOf(ovo.getNumMesa()));
                         vRegOrd.txtDetalle.append("MONTO TOTAL: " + String.valueOf(ovo.getSubTotal()) + " \n");
                     }
                     
-                    for(DetalleOrdenVO dovo : dodao.consultar(numeroOrden[2])){
+                    for(DetalleOrdenVO dovo : dodao.consultar(numeroOrden[x])){
                         
                         // vRegOrd.txtDetalle.append( "ORDEN: " + String.valueOf(dovo.getFkIDOrden())+ "\n");
                         vRegOrd.txtDetalle.append(String.valueOf(dovo.getCantidad())+ " DE: ");
-                        vRegOrd.txtDetalle.append(String.valueOf(dovo.getFkIdProducto())+ " SUBTOTAL: ");
-                        vRegOrd.txtDetalle.append(String.valueOf(dovo.getSubTotal()) + "\n");  ///POSIBLE ERROR
+                        pvo.setIdProducto(dovo.getFkIdProducto());
+                        vRegOrd.txtDetalle.append(pdao.consultaExactaP(pvo).get(0).getNombreProducto());///
+                        //vRegOrd.txtDetalle.append("daldf");///
+                        
+                        vRegOrd.txtDetalle.append(" SUBTOTAL: " +String.valueOf(dovo.getSubTotal()) + "\n");
                     
-                    }
+                    }   //hasta aca
                 
             }
     }
         
-        //YA
+      
     @Override
     public void actionPerformed(ActionEvent e) {
         //MESA 1
@@ -369,6 +466,7 @@ public class ControladorOrden implements ActionListener, WindowListener{
     @Override
     public void windowOpened(WindowEvent e) {
      estadoMesas();
+     timerM1.start();
 
 
     }
@@ -390,7 +488,7 @@ public class ControladorOrden implements ActionListener, WindowListener{
 
     @Override
     public void windowDeiconified(WindowEvent e) {
-        
+       
     }
 
     @Override

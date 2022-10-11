@@ -26,6 +26,7 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jopInfo = new javax.swing.JOptionPane();
         jpTomaOrd = new javax.swing.JPanel();
         lbFecha = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -70,6 +71,7 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
         txtNumOrden = new javax.swing.JLabel();
         lbNumOrden = new javax.swing.JLabel();
         lbEstadoMesa = new javax.swing.JLabel();
+        btnServido = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -96,16 +98,16 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
         jLabel7.setText("jLabel3");
 
         lbMenu1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbMenu1.setText("Hamburguesa");
+        lbMenu1.setText(".");
 
         lbMenu2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbMenu2.setText("Pollo Frito");
+        lbMenu2.setText(".");
 
         lbMenu4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbMenu4.setText("Gaseosa");
+        lbMenu4.setText(".");
 
         lbMenu3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbMenu3.setText("Pizza");
+        lbMenu3.setText(".");
 
         spMenu1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         spMenu1.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
@@ -124,7 +126,7 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
         jLabel12.setPreferredSize(new java.awt.Dimension(150, 100));
 
         lbMenu5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbMenu5.setText("Shuco");
+        lbMenu5.setText(".");
 
         spMenu5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         spMenu5.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
@@ -133,7 +135,7 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
         jLabel14.setText("jLabel3");
 
         lbMenu6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbMenu6.setText("Mixta");
+        lbMenu6.setText(".");
 
         spMenu6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         spMenu6.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
@@ -142,7 +144,7 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
         jLabel16.setText("jLabel3");
 
         lbMenu7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbMenu7.setText("Churrasco");
+        lbMenu7.setText(".");
 
         spMenu7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         spMenu7.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
@@ -151,7 +153,7 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
         jLabel18.setText("jLabel3");
 
         lbMenu8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbMenu8.setText("Papas Fritas");
+        lbMenu8.setText(".");
 
         spMenu8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         spMenu8.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
@@ -266,7 +268,8 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        btnAceptar.setBackground(new java.awt.Color(0, 102, 0));
+        btnAceptar.setBackground(new java.awt.Color(102, 102, 0));
+        btnAceptar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnAceptar.setText("ACEPTAR");
         btnAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -275,6 +278,7 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
         });
 
         btnCancelar.setBackground(new java.awt.Color(255, 102, 102));
+        btnCancelar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnCancelar.setText("CANCELAR");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -296,8 +300,9 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
 
         lbUsuario1.setText("NOMBRE");
 
-        btnFacturar.setBackground(new java.awt.Color(51, 102, 255));
-        btnFacturar.setText("Facturar");
+        btnFacturar.setBackground(new java.awt.Color(0, 153, 102));
+        btnFacturar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnFacturar.setText("FACTURAR");
         btnFacturar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFacturarActionPerformed(evt);
@@ -305,7 +310,8 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
         });
 
         btnCerrarMesa.setBackground(new java.awt.Color(102, 102, 102));
-        btnCerrarMesa.setText("Cerrar Mesa");
+        btnCerrarMesa.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnCerrarMesa.setText("CERRAR MESA");
         btnCerrarMesa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarMesaActionPerformed(evt);
@@ -317,6 +323,15 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
         lbNumOrden.setText("No Orden:");
 
         lbEstadoMesa.setText("MESA");
+
+        btnServido.setBackground(new java.awt.Color(51, 102, 255));
+        btnServido.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnServido.setText("SERVIDO");
+        btnServido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnServidoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpTomaOrdLayout = new javax.swing.GroupLayout(jpTomaOrd);
         jpTomaOrd.setLayout(jpTomaOrdLayout);
@@ -350,10 +365,15 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
                                         .addComponent(lbMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(lbEstadoMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(12, 12, 12)
                         .addGroup(jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jpTomaOrdLayout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addComponent(btnServido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpTomaOrdLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnCancelar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnAceptar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jpTomaOrdLayout.createSequentialGroup()
                         .addGap(290, 290, 290)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -362,8 +382,8 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(42, 42, 42)
                         .addGroup(jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnFacturar, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
-                            .addComponent(btnCerrarMesa, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE))))
+                            .addComponent(btnFacturar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnCerrarMesa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(47, 47, 47))
         );
         jpTomaOrdLayout.setVerticalGroup(
@@ -381,22 +401,27 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
                     .addComponent(lbUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(5, 5, 5)
-                .addGroup(jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lbMesa1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lbMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lbEstadoMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jpTomaOrdLayout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lbMesa1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lbMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lbEstadoMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jpTomaOrdLayout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(17, 17, 17)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(11, 11, 11))
                     .addGroup(jpTomaOrdLayout.createSequentialGroup()
                         .addGap(79, 79, 79)
                         .addComponent(btnAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(17, 17, 17)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
+                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnServido, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(85, 85, 85)))
                 .addGroup(jpTomaOrdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jpTomaOrdLayout.createSequentialGroup()
@@ -440,6 +465,10 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCerrarMesaActionPerformed
 
+    private void btnServidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnServidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnServidoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -480,6 +509,7 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
     public javax.swing.JButton btnCancelar;
     public javax.swing.JButton btnCerrarMesa;
     public javax.swing.JButton btnFacturar;
+    public javax.swing.JButton btnServido;
     public javax.swing.JLabel jLabel12;
     public javax.swing.JLabel jLabel14;
     public javax.swing.JLabel jLabel16;
@@ -494,6 +524,7 @@ public class FrmRegistroOrden extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    public javax.swing.JOptionPane jopInfo;
     private javax.swing.JPanel jpTomaOrd;
     public javax.swing.JLabel lbEstadoMesa;
     public javax.swing.JLabel lbFecha;

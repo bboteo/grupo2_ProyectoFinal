@@ -19,7 +19,7 @@ public class OrdenDAO implements ConsultaOrden {
         Conexion c = new Conexion();
         try {
            c.conectar();
-           String query = "INSERT INTO dbogrupo2.orden(num_mesa, total_venta, FK_id_usuario, FK_id_restaurante, FK_id_clienet) "
+           String query = "INSERT INTO dbogrupo2.orden(num_mesa, total_venta, FK_id_usuario, FK_id_restaurante, FK_id_cliente) "
                    + "VALUES (" + ovo.getNumMesa() +", "+ ovo.getSubTotal() + ", " + ovo.getFkIdUsuario() +", "+ ovo.getFkIdRestaurante() + ", " + ovo.getFkIdCliente() + ")";
      
            c.consultasMultiples(query);
@@ -42,7 +42,7 @@ public class OrdenDAO implements ConsultaOrden {
              c.conectar();
             String query = 
                     "SELECT id_orden, num_mesa, total_venta, FK_id_usuario, FK_id_restaurante, FK_id_cliente FROM dbogrupo2.orden WHERE id_orden = " + n;
-                        
+                    
             ResultSet rs = c.consultaDatos(query);
             while(rs.next()){
                 OrdenVO ovo = new OrdenVO();
@@ -101,6 +101,10 @@ public class OrdenDAO implements ConsultaOrden {
         return consultaOrden;
         
     }
+    
+    
+    
+    
 
     @Override
     public void eliminiar(int ordVOElim) {
@@ -124,6 +128,37 @@ public class OrdenDAO implements ConsultaOrden {
         }
         c.desconectar();
         return true;        
+    }
+
+    @Override
+    public OrdenVO consultaUltimaOrd() {
+        Conexion c = new Conexion();
+          OrdenVO consultaOrden = new OrdenVO();
+        
+        try{
+             c.conectar();
+            String query = 
+                    // PARA OBTENER EL ULTIMO VALOR DE LA TABLA
+                    "SELECT id_orden, num_mesa, total_venta, FK_id_usuario, FK_id_restaurante, FK_id_cliente FROM dbogrupo2.orden ORDER BY  id_orden DESC LIMIT 1";     
+            ResultSet rs = c.consultaDatos(query);
+            while(rs.next()){
+                OrdenVO ovo = new OrdenVO();
+                ovo.setIdOrden(rs.getInt(1));
+                ovo.setNumMesa(rs.getInt(2));
+                ovo.setSubTotal(rs.getDouble(3));
+                ovo.setFkIdUsuario(rs.getInt(4));
+                ovo.setFkIdRestaurante(rs.getInt(5));
+                ovo.setFkIdCliente(rs.getInt(6));
+                //consultaOrden.add(ovo);
+                consultaOrden = ovo;
+            }
+            c.desconectar();
+             } catch (Exception e) {
+             System.err.println("Error[MMostrar CUO]: " + e.getMessage());
+            c.desconectar();
+        }
+              return consultaOrden;
+               
     }
     
 }
