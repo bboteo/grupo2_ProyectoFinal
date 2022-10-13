@@ -315,7 +315,7 @@ public class ControladorUsuriosAdmin implements ActionListener, WindowListener, 
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        if(e.getClickCount()==2){
+        if(e.getClickCount()==1){
             vUa.txtUsuarioAdminUsuario.setEditable(true);
             vUa.txtUsuarioAdminNombre.setEditable(true);
             vUa.txtUsuarioAdminApellido.setEditable(true);

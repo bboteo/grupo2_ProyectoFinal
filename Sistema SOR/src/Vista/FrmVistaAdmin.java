@@ -30,8 +30,6 @@ public class FrmVistaAdmin extends javax.swing.JFrame {
         btnVistaAdminIngresarU = new javax.swing.JButton();
         btnVistaAdminIngresarM = new javax.swing.JButton();
         btnVistaAdminVerMesas = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        btnVistaAdminHistorial = new javax.swing.JButton();
         btnVistaAdminSalir = new javax.swing.JButton();
         lblNombreUsuario = new javax.swing.JLabel();
         lblid = new javax.swing.JLabel();
@@ -54,11 +52,6 @@ public class FrmVistaAdmin extends javax.swing.JFrame {
 
         btnVistaAdminVerMesas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVistaAdminVerMesas.setText("Ver Mesas");
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setText("Reportes");
-
-        btnVistaAdminHistorial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Historial1.png"))); // NOI18N
 
         btnVistaAdminSalir.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVistaAdminSalir.setText("Salir");
@@ -90,13 +83,8 @@ public class FrmVistaAdmin extends javax.swing.JFrame {
                         .addComponent(lblVistaAdminId, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnVistaAdminHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(lblid, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblid, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14))
         );
         layout.setVerticalGroup(
@@ -111,16 +99,11 @@ public class FrmVistaAdmin extends javax.swing.JFrame {
                             .addComponent(jLabel3)))
                     .addComponent(lblid, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnVistaAdminIngresarU)
-                    .addComponent(jLabel1))
+                .addComponent(btnVistaAdminIngresarU)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnVistaAdminHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnVistaAdminIngresarM)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnVistaAdminVerMesas)))
+                .addComponent(btnVistaAdminIngresarM)
+                .addGap(18, 18, 18)
+                .addComponent(btnVistaAdminVerMesas)
                 .addGap(18, 18, 18)
                 .addComponent(btnVistaAdminSalir)
                 .addGap(28, 28, 28))
@@ -170,12 +153,10 @@ public class FrmVistaAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnVistaAdminHistorial;
     public javax.swing.JButton btnVistaAdminIngresarM;
     public javax.swing.JButton btnVistaAdminIngresarU;
     public javax.swing.JButton btnVistaAdminSalir;
     public javax.swing.JButton btnVistaAdminVerMesas;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     public javax.swing.JLabel lblNombreUsuario;
     public javax.swing.JLabel lblVistaAdminId;

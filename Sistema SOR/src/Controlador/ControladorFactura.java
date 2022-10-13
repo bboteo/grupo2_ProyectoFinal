@@ -71,7 +71,7 @@ public class ControladorFactura implements ActionListener, WindowListener{
         vFa.txtFacturaTelefono.setEditable(false);
         clienteNuevo = false;
         nitFactura = "";
-       vFa.lblFacutraOrden.setText("18");
+       //vFa.lblFacutraOrden.setText("18");
     }
     
     private boolean buscarcliente(){

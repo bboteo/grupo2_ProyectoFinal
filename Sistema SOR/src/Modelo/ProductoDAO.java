@@ -92,12 +92,39 @@ public class ProductoDAO implements TablaProducto{
 
     @Override
     public boolean eliminarP(ProductoVO pvo) {
-        return false;
+        Conexion c = new Conexion();
+        try {
+            c.conectar();
+            String query ="DELETE FROM dbogrupo2.producto WHERE producto.id_producto = "
+                    + pvo.getIdProducto();
+            c.consultasMultiples(query);
+        } catch (Exception e) {
+            System.err.println("Error eliminar Producto"+e);
+            c.desconectar();
+            return false;
+        }
+        return true;
     }
 
     @Override
     public boolean actualizarP(ProductoVO pvo) {
-        return false;
+        Conexion c = new Conexion();
+        try {
+            c.conectar();
+            String query = "UPDATE dbogrupo2.producto SET " 
+                    + "producto.nombre = '"+ pvo.getNombreProducto()+"',"
+                    + "producto.precio = " + pvo.getPrecioProducto()+","
+                    + "producto.descripcion = '" + pvo.getDescripcionProducto()+"',"
+                    + "producto.cod_img_producto = " + pvo.getCodImagenProducto()+" "
+                    + "WHERE producto.id_producto = "+pvo.getIdProducto();
+            c.consultasMultiples(query);
+        } catch (Exception e) {
+            System.err.println("Error Actualizando Producto"+e);
+            c.desconectar();
+            return false;
+        }
+        c.desconectar();
+        return true;
     }
 
     

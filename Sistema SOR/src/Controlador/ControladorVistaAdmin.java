@@ -10,6 +10,7 @@ import Vista.FrmLogin;
 import Modelo.OrdenDAO;
 import Modelo.OrdenVO;
 import Vista.FrmMesas;
+import Vista.FrmProductosAdmin;
 import Vista.FrmUsuariosAdmin;
 import Vista.FrmVistaAdmin;
 import java.awt.event.ActionEvent;
@@ -27,15 +28,17 @@ public class ControladorVistaAdmin implements ActionListener, WindowListener{
      FrmMesas vMesa = new FrmMesas();  //JM
     FrmVistaAdmin vAd = new FrmVistaAdmin();
     FrmUsuariosAdmin vUd = new FrmUsuariosAdmin();
+    FrmProductosAdmin vPd = new FrmProductosAdmin();
     LoginDAO ldao = new LoginDAO();
     
     public ControladorVistaAdmin(FrmVistaAdmin vAd,FrmUsuariosAdmin vUd,FrmLogin vlog,
-            LoginDAO ldao,FrmMesas vMesa) {
+            LoginDAO ldao,FrmMesas vMesa, FrmProductosAdmin vPd) {
         this.vAd = vAd;
         this.vUd = vUd;
         this.vlog = vlog;
         this.ldao = ldao;
         this.vMesa = vMesa;
+        this.vPd = vPd;
    
    // OrdenDAO ordenDAO = new OrdenDAO();
     //OrdenVO ordenVO = new OrdenVO();
@@ -48,7 +51,6 @@ public class ControladorVistaAdmin implements ActionListener, WindowListener{
         this.vAd.btnVistaAdminIngresarM.addActionListener(this);
         this.vAd.btnVistaAdminVerMesas.addActionListener(this);
         this.vAd.btnVistaAdminSalir.addActionListener(this);
-        this.vAd.btnVistaAdminHistorial.addActionListener(this);
         this.vAd.addWindowListener(this);
     }
     
@@ -69,11 +71,10 @@ public class ControladorVistaAdmin implements ActionListener, WindowListener{
         }
         //Para ingresar productos
         if(e.getSource()==vAd.btnVistaAdminIngresarM){
-            
-        }
-        //Para ver el historial
-        if(e.getSource()==vAd.btnVistaAdminHistorial){
-            
+            vAd.dispose();
+            vPd.setVisible(true);
+            vPd.setLocationRelativeTo(vAd);
+            vPd.setResizable(false);
         }
         //Para ver mesas
         if(e.getSource()==vAd.btnVistaAdminVerMesas){

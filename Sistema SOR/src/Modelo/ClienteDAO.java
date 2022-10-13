@@ -35,7 +35,7 @@ public class ClienteDAO implements TablaCliente{
     }
 
     @Override
-    public ArrayList<ClienteVO> consultarC(ClienteVO cl) {
+    public ArrayList<ClienteVO> consultarCxNit(ClienteVO cl) {
         ArrayList<ClienteVO> info = new ArrayList<>();
         ResultSet result = null;
         Conexion c = new Conexion();
@@ -43,6 +43,32 @@ public class ClienteDAO implements TablaCliente{
             c.conectar();
             String query ="SELECT * FROM dbogrupo2.cliente\n" +
                           "WHERE cliente.nit_cliente= '"+cl.getNitCliente()+"'";
+            result = c.consultaDatos(query);
+            while(result.next()){
+                ClienteVO clv = new ClienteVO();
+                clv.setIdCliente(result.getInt(1));
+                clv.setNitCliente(result.getString(2));
+                clv.setNombreCliente(result.getString(3));
+                clv.setApellidoCliente(result.getString(4));
+                clv.setTelefonoCliente(result.getString(5));
+                info.add(clv);
+            }
+        } catch (Exception e) {
+            System.err.println("Error en consulta de Cliente"+e.getMessage());
+            c.desconectar();
+        }
+        return info;
+    }
+
+    @Override
+    public ArrayList<ClienteVO> consutarCxId(ClienteVO cl) {
+        ArrayList<ClienteVO> info = new ArrayList<>();
+        ResultSet result = null;
+        Conexion c = new Conexion();
+        try {
+            c.conectar();
+            String query ="SELECT * FROM dbogrupo2.cliente\n" +
+                          "WHERE cliente.id_cliente= '"+cl.getIdCliente()+"'";
             result = c.consultaDatos(query);
             while(result.next()){
                 ClienteVO clv = new ClienteVO();

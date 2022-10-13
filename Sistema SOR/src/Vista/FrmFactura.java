@@ -44,7 +44,7 @@ public class FrmFactura extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         lblFacutraOrden = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         btnFacturaCf.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnFacturaCf.setText("C/F");

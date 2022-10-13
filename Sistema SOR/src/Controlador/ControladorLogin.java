@@ -9,6 +9,7 @@ import Modelo.UsuarioVO;
 import Vista.FrmFactura;
 import Vista.FrmLogin;
 import Vista.FrmMesas;
+import Vista.FrmProductosAdmin;
 import Vista.FrmUsuariosAdmin;
 import Vista.FrmVistaAdmin;
 import java.awt.event.ActionEvent;

@@ -12,5 +12,6 @@ import java.util.ArrayList;
  */
 public interface TablaCliente {
     public boolean insertarC (ClienteVO cl);
-    public ArrayList<ClienteVO> consultarC(ClienteVO cl);
+    public ArrayList<ClienteVO> consultarCxNit(ClienteVO cl);
+    public ArrayList<ClienteVO> consutarCxId(ClienteVO cl);
 }
