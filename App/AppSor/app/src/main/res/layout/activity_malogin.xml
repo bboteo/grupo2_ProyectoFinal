@@ -15,6 +15,7 @@
         android:layout_marginTop="100sp">
 
         <ImageView
+            android:src="@drawable/ic_usuario"
             android:layout_width="200sp"
             android:layout_height="200sp"
             android:layout_gravity="center"/>
@@ -34,10 +35,10 @@
         android:id="@+id/edtContra"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Ingresa tu nombre de usuario"
+        android:hint="Ingresa tu contrasena"
         android:layout_marginLeft="10sp"
         android:layout_marginTop="20sp"
-        android:inputType="text"/>
+        android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/btnIngresar"
@@ -46,7 +47,8 @@
         android:text="Ingresar"
         android:textStyle="bold"
         android:layout_marginTop="20sp"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:backgroundTint="#03A9F4"/>
 
 
     

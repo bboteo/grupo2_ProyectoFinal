@@ -1,6 +1,6 @@
 <?php
 $host = "grupo2-2022.mysql.database.azure.com";
-$usuario = "grupo2";
+$usuario = "grupo2@grupo2-2022.mysql.database.azure.com";
 $contra = "Intecap2022";
 $bd = "dbogrupo2";
 $conection = mysqli_init();
