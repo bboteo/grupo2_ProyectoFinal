@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MATomaPedido"
+    android:orientation="vertical"
+    android:nestedScrollingEnabled="true">
+
+
+    <!--    CABECERA-->
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TOMA DE ORDEN"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        />
+    <!--nombre y N. Mesa-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/jlb1"
+            android:layout_width="70sp"
+            android:layout_height="wrap_content"
+            android:text="NOMBRE: "
+            android:layout_marginStart="10sp"/>
+        <TextView
+            android:id="@+id/lbUsuario"
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:text="Nombre"
+            android:layout_marginStart="2sp"
+            />
+
+        <TextView
+            android:id="@+id/lb2"
+            android:layout_width="40sp"
+            android:layout_height="wrap_content"
+            android:text="Mesa: "
+            android:layout_marginStart="5sp"
+            />
+        <TextView
+            android:id="@+id/lbMesa"
+            android:layout_width="20sp"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_marginStart="5sp"
+            />
+
+    </LinearLayout>
+
+
+    <!--    No Orden, Estado Orden-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/jlb3"
+            android:layout_width="70sp"
+            android:layout_height="wrap_content"
+            android:text="No Orden: "
+            android:layout_marginStart="10sp"/>
+
+        <TextView
+            android:id="@+id/txtNumOrden"
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:text="100"
+            android:layout_marginStart="2sp"
+            />
+
+        <TextView
+            android:id="@+id/lbEstadoMesa"
+            android:layout_width="65sp"
+            android:layout_height="wrap_content"
+            android:text="estado"
+            android:layout_marginStart="5sp"
+            />
+
+    </LinearLayout>
+
+
+
+
+
+    <!--FILA 1 Menu, nombre, cantidad-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="10dp">
+
+            <ImageView
+                android:id="@+id/imgMesa1"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:src="@drawable/ic_hamburguer150"
+                />
+            <TextView
+                android:id="@+id/lbMenu1"
+                android:layout_width="match_parent"
+                android:layout_height="35sp"
+                android:text="Hamburguesa con pollo frito y papas calientes mas atol"
+                android:textSize="10sp"
+                android:layout_marginStart="1dp"
+                android:maxLines="2"
+                android:gravity="center"
+                />
+            <EditText
+                android:id="@+id/txtM1"
+                android:layout_width="80sp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:inputType="number"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="10dp">
+
+            <ImageView
+                android:id="@+id/imgMesa2"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:src="@drawable/ic_pollofrito150"
+                />
+            <TextView
+                android:id="@+id/lbMenu2"
+                android:layout_width="match_parent"
+                android:layout_height="35sp"
+                android:text="Hamburguesa con pollo frito y papas calientes mas atol"
+                android:textSize="10sp"
+                android:layout_marginStart="1dp"
+                android:maxLines="2"
+                android:gravity="center"
+                />
+            <EditText
+                android:id="@+id/txtM2"
+                android:layout_width="50sp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:inputType="number"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="10dp">
+
+            <ImageView
+                android:id="@+id/imgMesa3"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:src="@drawable/ic_pizza150"
+                />
+            <TextView
+                android:id="@+id/lbMenu3"
+                android:layout_width="match_parent"
+                android:layout_height="35sp"
+                android:text="Hamburguesa con pollo frito y papas calientes mas atol"
+                android:textSize="10sp"
+                android:layout_marginStart="1dp"
+                android:maxLines="2"
+                android:gravity="center"
+                />
+            <EditText
+                android:id="@+id/txtM3"
+                android:layout_width="50sp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:inputType="number"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--    FILA 2 menu, nombre, cantidad-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="1dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="10dp">
+
+            <ImageView
+                android:id="@+id/imgMesa4"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:src="@drawable/ic_gaseosas150"
+                />
+            <TextView
+                android:id="@+id/lbMenu4"
+                android:layout_width="match_parent"
+                android:layout_height="35sp"
+                android:text="Hamburguesa con pollo frito y papas calientes mas atol"
+                android:textSize="10sp"
+                android:layout_marginStart="1dp"
+                android:maxLines="2"
+                android:gravity="center"
+                />
+            <EditText
+                android:id="@+id/txtM4"
+                android:layout_width="50sp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:inputType="number"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="10dp">
+
+            <ImageView
+                android:id="@+id/imgMesa5"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:src="@drawable/ic_shuco150"
+                />
+            <TextView
+                android:id="@+id/lbMenu5"
+                android:layout_width="match_parent"
+                android:layout_height="35sp"
+                android:text="Hamburguesa con pollo frito y papas calientes mas atol"
+                android:textSize="10sp"
+                android:layout_marginStart="1dp"
+                android:maxLines="2"
+                android:gravity="center"
+                />
+            <EditText
+                android:id="@+id/txtM5"
+                android:layout_width="50sp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:inputType="number"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="10dp">
+
+            <ImageView
+                android:id="@+id/imgMesa6"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:src="@drawable/ic_mixta150"
+                />
+            <TextView
+                android:id="@+id/lbMenu6"
+                android:layout_width="match_parent"
+                android:layout_height="35sp"
+                android:text="Hamburguesa con pollo frito y papas calientes mas atol"
+                android:textSize="10sp"
+                android:layout_marginStart="1dp"
+                android:maxLines="2"
+                android:gravity="center"
+                />
+
+            <EditText
+                android:id="@+id/txtM6"
+                android:layout_width="50sp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:inputType="number"
+                android:text="0" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--    FILA 3, Menu, Nombre, Cantidad-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="1dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="10dp">
+
+            <ImageView
+                android:id="@+id/imgMesa7"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:src="@drawable/ic_churrasco150"
+                />
+            <TextView
+                android:id="@+id/lbMenu7"
+                android:layout_width="match_parent"
+                android:layout_height="35sp"
+                android:text="Hamburguesa con pollo frito y papas calientes mas atol"
+                android:textSize="10sp"
+                android:layout_marginStart="1dp"
+                android:maxLines="2"
+                android:gravity="center"
+                />
+            <EditText
+                android:id="@+id/txtM7"
+                android:layout_width="50sp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:inputType="number"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="10dp">
+
+            <ImageView
+                android:id="@+id/imgMesa8"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:src="@drawable/ic_papasf150"
+                />
+            <TextView
+                android:id="@+id/lbMenu8"
+                android:layout_width="match_parent"
+                android:layout_height="35sp"
+                android:text="Hamburguesa con pollo frito y papas calientes mas atol"
+                android:textSize="10sp"
+                android:layout_marginStart="1dp"
+                android:maxLines="2"
+                android:gravity="center"
+                />
+            <EditText
+                android:id="@+id/txtM8"
+                android:layout_width="50sp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:inputType="number"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="10dp">
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imgMesa9"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="70dp"-->
+<!--                android:src=""-->
+<!--                />-->
+
+            <TextView
+                android:id="@+id/lbMenu9"
+                android:layout_width="match_parent"
+                android:layout_height="35sp"
+                android:layout_marginStart="1dp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text=""
+                android:textSize="10sp" />
+
+<!--            <EditText-->
+<!--                android:id="@+id/txtM9"-->
+<!--                android:layout_width="50sp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text=""-->
+<!--                android:inputType="number"-->
+<!--                android:gravity="center"-->
+<!--                />-->
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- BOTONES-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnAceptar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#EF6C00"
+            android:text="ACEPTAR" />
+
+        <Button
+            android:id="@+id/btnServido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#283593"
+            android:text="servido" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/btnCerrarMesa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#6E6969"
+            android:text=" CERRAR  " />
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#FF4081"
+            android:text="  SALIR   " />
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
+
+
+
+
+

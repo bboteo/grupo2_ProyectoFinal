@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Restaurante SOR"
+                android:textColor="#AFB42B"
+                android:textSize="35sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Menu"
+                android:textColor="#D33737"
+                android:textSize="40dp"
+                android:textStyle="bold" />
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="108dp"
+                android:layout_gravity="center"
+                android:layout_margin="15sp"
+                app:cardBackgroundColor="#1976D2"
+                app:cardCornerRadius="25sp"
+                app:cardElevation="15sp"
+                app:contentPadding="15sp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="HAMBURGUESA...Q25.50"
+                    android:textColor="@color/black"
+                    android:textSize="10pt" />
+
+                <ImageView
+                    android:layout_width="99dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_horizontal|end"
+                    android:src="@drawable/ic_hamburgu" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="124dp"
+                android:layout_gravity="center"
+                android:layout_margin="15sp"
+                app:cardBackgroundColor="#1976D2"
+                app:cardCornerRadius="25sp"
+                app:cardElevation="15sp"
+                app:contentPadding="15sp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PAPAS FRITAS...Q13.50"
+                    android:textColor="@color/black"
+                    android:textSize="10pt" />
+
+                <ImageView
+                    android:layout_width="126dp"
+                    android:layout_height="87dp"
+                    android:layout_gravity="center_horizontal|end"
+                    android:src="@drawable/ic_papasfritas" />
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="124dp"
+                android:layout_gravity="center"
+                android:layout_margin="15sp"
+                app:cardBackgroundColor="#1976D2"
+                app:cardCornerRadius="25sp"
+                app:cardElevation="15sp"
+                app:contentPadding="15sp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="POLLO FRITO...Q17.50"
+                    android:textColor="@color/black"
+                    android:textSize="10pt" />
+
+                <ImageView
+                    android:layout_width="152dp"
+                    android:layout_height="91dp"
+                    android:layout_gravity="center_horizontal|end"
+                    android:src="@drawable/ic_pollofrito" />
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="124dp"
+                android:layout_gravity="center"
+                android:layout_margin="15sp"
+                app:cardBackgroundColor="#1976D2"
+                app:cardCornerRadius="25sp"
+                app:cardElevation="15sp"
+                app:contentPadding="15sp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CHURRASCO...Q17.75"
+                    android:textColor="@color/black"
+                    android:textSize="10pt" />
+
+                <ImageView
+                    android:layout_width="152dp"
+                    android:layout_height="91dp"
+                    android:layout_gravity="center_horizontal|end"
+                    android:src="@drawable/ic_churrasco" />
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="124dp"
+                android:layout_gravity="center"
+                android:layout_margin="15sp"
+                app:cardBackgroundColor="#1976D2"
+                app:cardCornerRadius="25sp"
+                app:cardElevation="15sp"
+                app:contentPadding="15sp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="HOT DOG...Q12.50"
+                    android:textColor="@color/black"
+                    android:textSize="10pt" />
+
+                <ImageView
+                    android:layout_width="152dp"
+                    android:layout_height="91dp"
+                    android:layout_gravity="center_horizontal|end"
+                    android:src="@drawable/ic_hotdog" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="124dp"
+                android:layout_gravity="center"
+                android:layout_margin="15sp"
+                app:cardBackgroundColor="#1976D2"
+                app:cardCornerRadius="25sp"
+                app:cardElevation="15sp"
+                app:contentPadding="15sp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PIZZA...Q60.00"
+                    android:textColor="@color/black"
+                    android:textSize="10pt" />
+
+                <ImageView
+                    android:layout_width="152dp"
+                    android:layout_height="91dp"
+                    android:layout_gravity="center_horizontal|end"
+                    android:src="@drawable/ic_pizza" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="124dp"
+                android:layout_gravity="center"
+                android:layout_margin="15sp"
+                app:cardBackgroundColor="#1976D2"
+                app:cardCornerRadius="25sp"
+                app:cardElevation="15sp"
+                app:contentPadding="15sp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MIXTA...Q15.00"
+                    android:textColor="@color/black"
+                    android:textSize="10pt" />
+
+                <ImageView
+                    android:layout_width="152dp"
+                    android:layout_height="91dp"
+                    android:layout_gravity="center_horizontal|end"
+                    android:src="@drawable/ic_mixtapapad" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="124dp"
+                android:layout_gravity="center"
+                android:layout_margin="15sp"
+                app:cardBackgroundColor="#1976D2"
+                app:cardCornerRadius="25sp"
+                app:cardElevation="15sp"
+                app:contentPadding="15sp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FLAN...Q6.50"
+                    android:textColor="@color/black"
+                    android:textSize="10pt" />
+
+                <ImageView
+                    android:layout_width="152dp"
+                    android:layout_height="91dp"
+                    android:layout_gravity="center_horizontal|end"
+                    android:src="@drawable/ic_flan" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="124dp"
+                android:layout_gravity="center"
+                android:layout_margin="15sp"
+                app:cardBackgroundColor="#1976D2"
+                app:cardCornerRadius="25sp"
+                app:cardElevation="15sp"
+                app:contentPadding="15sp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="GASEOSAS...Q15.50"
+                    android:textColor="@color/black"
+                    android:textSize="10pt" />
+
+                <ImageView
+                    android:layout_width="152dp"
+                    android:layout_height="91dp"
+                    android:layout_gravity="center_horizontal|end"
+                    android:src="@drawable/ic_gaseosa" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="124dp"
+                android:layout_gravity="center"
+                android:layout_margin="15sp"
+                app:cardBackgroundColor="#1976D2"
+                app:cardCornerRadius="25sp"
+                app:cardElevation="15sp"
+                app:contentPadding="15sp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CAFE...Q5.00"
+                    android:textColor="@color/black"
+                    android:textSize="10pt" />
+
+                <ImageView
+                    android:layout_width="152dp"
+                    android:layout_height="91dp"
+                    android:layout_gravity="center_horizontal|end"
+                    android:src="@drawable/ic_tazadecafe" />
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btnLogginusuarios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="#B2EC47"
+                android:text="Loggin Usuarios"
+                android:textColor="#000000"
+                android:textColorHint="@color/teal_200"
+                android:textStyle="bold"
+                android:layout_marginBottom="10sp"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>
